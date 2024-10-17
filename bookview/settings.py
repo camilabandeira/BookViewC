@@ -26,9 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 SECRET_KEY = config('SECRET_KEY')
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
-
-
+ALLOWED_HOSTS = ['bookviewc-7148162b5406.herokuapp.com', 'localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
