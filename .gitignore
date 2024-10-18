@@ -1,6 +1,15 @@
-venv
+# Ignore virtual environment directory
+venv/
+
+# Ignore SQLite database file
 db.sqlite3
 
+# Ignore environment variable file
 .env
 
+# Ignore directory for static files
 staticfiles/
+
+# Ignore compiled Python bytecode files
+__pycache__/
+*.py[cod]
