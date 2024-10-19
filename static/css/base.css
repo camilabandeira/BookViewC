@@ -176,7 +176,7 @@ footer p {
         justify-content: flex-start;
         align-items: center;
         z-index: 999;
-        transition: max-height 0.3s ease-out, opacity 0.5s ease-out;
+        transition: 0.1s ease-out;
     }
 
     .navbar-nav {
