@@ -27,6 +27,15 @@ DEBUG = True
 SECRET_KEY = config('SECRET_KEY')
 ALLOWED_HOSTS = ['bookviewc-7148162b5406.herokuapp.com', 'localhost', '127.0.0.1']
 
+
+# Add the domains you want to trust for CSRF
+CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1:8000',
+    'http://localhost:8000',
+    'https://bookviewc-7148162b5406.herokuapp.com',
+]
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -118,7 +127,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
-from .models import Post
+from django.contrib.auth.decorators import login_required
+from .models import Post, Comment
+from django.contrib import messages
 
 
 def homepage(request):
@@ -24,4 +26,17 @@ def reviews_page(request):
 
     return render(request, 'blog/reviews_page.html', {'page_obj': page_obj})
 
+def post_detail(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    comments = post.comments.all()  # Fetch the comments related to this post
 
+    if request.method == 'POST' and request.user.is_authenticated:
+        content = request.POST.get('commentText')  # Match this with your form's textarea name
+        if content:
+            Comment.objects.create(post=post, author=request.user, content=content)
+            messages.success(request, 'Your comment has been posted.')
+            return redirect('post_detail', slug=slug)
+        else:
+            messages.error(request, 'Comment cannot be empty.')
+
+    return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments})

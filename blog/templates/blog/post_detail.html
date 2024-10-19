@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Post Page - {{ post.title }}
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
+
+    <div class="container-fluid post-container">
+        <div class="row cover_image-container">
+            <div class="col-12">
+                <img src="{{ post.get_post_image }}" alt="Cover Image" class="post-cover-image">
+            </div>
+        </div>
+
+        <div class="row mt-4 post_detailed-container text-center">
+            <div class="col-md-1">
+                <img src="{% static 'images/profile_image_default.jpeg' %}" alt="Author Image" class="author-imgage">
+            </div>
+
+            <div class="col-md-9 mx-auto d-flex">
+                <div class="line-container">
+                    <div class="vertical-line"></div>
+                </div>
+
+                <div class="post-detailed-main">
+                    <h1 class="post-title">{{ post.title }}</h1>
+                    <p class="post-author">
+                        by <a href="#">{{ post.author.username }}</a> | <span class="post-date">{{ post.created_on|date:"M d, Y" }}</span>
+                    </p>
+
+                    <div class="post-content">
+                        <div class="post_border"></div>
+                        {{ post.content|safe }}
+                    </div>
+                    <div class="post_border"></div>
+                </div>
+            </div>
+        </div>
+
+        <section class="comments-container" id="comments-section">
+            <!-- Comments Header and Count -->
+            <h3 class="comment-count">{{ comments.count }} Comments</h3>
+            <hr class="horizontal-separator">
+
+            <!-- Display Comments -->
+            <div id="comments-list">
+                {% for comment in comments %}
+                    <div class="comment-item">
+                        <div class="comment-author"><strong>{{ comment.author.username }}</strong> - {{ comment.created_at|timesince }} ago</div>
+                        <p>{{ comment.content }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Display Add Comment Form only if the user is authenticated -->
+            {% if user.is_authenticated %}
+                <div id="add-comment-form" class="add-comment-container">
+                    <h4 class="add-comment">Add a Comment</h4>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="comment-form">
+                            <textarea class="form-control" id="commentText" name="commentText" rows="3" placeholder="Write your comment here..."></textarea>
+                            <button type="submit" class="btn post-comment">Post Comment</button>
+                        </div>
+                    </form>
+                </div>
+            {% else %}
+                <!-- Sign-in message if not logged in -->
+                <div id="login-message" class="login-message">
+                    <p>Have thoughts about the book? <a href="{% url 'login' %}"> Sign in</a> to leave a comment.</p>
+                </div>
+            {% endif %}
+        </section>
+    </div>
+{% endblock %}
