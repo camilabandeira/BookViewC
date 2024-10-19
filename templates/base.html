@@ -1,4 +1,5 @@
-{% load static %} 
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,23 +7,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block title %}Bookview{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles -->
-    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
-        <!-- Favicon -->
+    <!-- Favicon -->
     <link type="image/png" sizes="32x32" rel="icon" href="{% static 'images/favicon.png' %}" />
 
+    <title>{% block title %}BookView{% endblock %}</title>
 </head>
 
 <body>
-    {% block content %}
-    {% endblock %}
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container d-flex gap-3">
+                <a class="navbar-title mx-lg-0" href="{% url 'homepage' %}">BOOKVIEW</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">About</a>
+                        </li>
+                        {% if not user.is_authenticated %}
+                        <li class="nav-item d-lg-none">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item d-lg-none">
+                            <a class="btn btn-signup btn-signup-transparent" href="#">Sign-Up</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item d-lg-none">
+                            <a class="nav-link" href="#">Logout</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+
+                    <!-- Search Form -->
+                    <form class="d-flex justify-content-center w-100 mt-3 mt-lg-0 ms-lg-auto" role="search" method="GET"
+                        action="#">
+                        <input class="form-control me-2 search-box" type="search" placeholder="Search"
+                            aria-label="Search" name="q">
+                        <button class="btn search_btn" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Desktop Login/Sign-Up -->
+                <ul class="navbar-nav d-none d-lg-flex ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link login-desktop" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-signup" href="#">Sign-Up</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2024 BookView. All rights reserved. Created by <strong>Camila Bandeira</strong>.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

@@ -1,0 +1,221 @@
+@import url('https://fonts.cdnfonts.com/css/the-bold-font');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* -- Color and font variables -- */
+:root {
+    --color-dark-charcoal: #2B2B25;
+    --color-deep-purple: #1D1141;
+    --color-muted-gray: #888;
+    --color-bright-blue: #546CFF;
+    --color-light-gray: #F9F9F9;
+    --color-neutral-gray: #F5F5F5;
+    --color-off-white: #FCFCFC;
+}
+
+/* -- Global reset and default styles -- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+::placeholder {
+    padding: 0.625rem;
+    font-family: "Lato", sans-serif;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--color-light-gray);
+}
+
+/* -- Navbar styles -- */
+.navbar,
+.navbar-title,
+.navbar-nav,
+.search-box {
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    background-color: var(--color-neutral-gray);
+    padding: 1rem 0;
+}
+
+.navbar-title {
+    font-family: 'The Bold Font', sans-serif;
+    font-weight: bold;
+    font-size: 2.2rem;
+    margin-top: 6px;
+    color: var(--color-dark-charcoal);
+}
+
+.navbar-nav .nav-link {
+    color: var(--color-dark-charcoal);
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--color-deep-purple);
+}
+
+.login-desktop {
+    font-weight: 900;
+}
+
+/* -- Sign-Up button styles -- */
+.btn-signup {
+    background-color: var(--color-dark-charcoal);
+    color: var(--color-neutral-gray);
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.btn-signup:hover {
+    background-color: var(--color-dark-charcoal);
+    color: var(--color-light-gray);
+}
+
+/* -- Search box styles -- */
+.search-box {
+    border: 1px solid var(--primary-text);
+    border-radius: 20px;
+    padding-left: 10px;
+    color: var(--primary-text);
+    width: 100%;
+}
+
+/* -- Outline button styles -- */
+.btn-outline-success {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    padding: 0.5rem 1rem;
+    box-shadow: none;
+}
+
+/* -- Search button styles -- */
+.search-box {
+    width: 12.5rem;
+    margin-left: auto;
+}
+
+.search_btn {
+    background-color: transparent;
+    border: none;
+}
+
+.search_btn i {
+    font-weight: bolder;
+    color: var(--color-dark-charcoal);
+}
+
+
+/* Footer Styles */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-neutral-gray);
+    height: 6rem;
+}
+
+footer p {
+    text-align: center;
+}
+
+/* -- Tablet styles (768px to 1024px) -- */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+    .navbar-title {
+        margin-right: auto;
+    }
+
+    .navbar-nav {
+        justify-content: center;
+    }
+
+    .search_btn i {
+        color: var(--color-dark-charcoal);
+        font-size: 1.2rem;
+    }
+}
+
+/* -- Mobile styles (Up to 991.98px) -- */
+@media (max-width: 991.98px) {
+
+    .navbar {
+        margin: 0;
+        padding: 0;
+        background-color: var(--color-neutral-gray);
+    }
+
+    .navbar-title {
+        padding: 0.5rem 1rem;
+        font-size: 1.8rem;
+    }
+
+    .navbar-collapse {
+        background-color: var(--color-light-gray);
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        z-index: 999;
+        transition: max-height 0.3s ease-out, opacity 0.5s ease-out;
+    }
+
+    .navbar-nav {
+        margin-top: 2rem;
+    }
+
+    .nav-link {
+        margin-bottom: 1rem;
+        color: var(--color-dark-charcoal);
+    }
+
+    .search-box {
+        border: 1px solid var(--color-muted-gray);
+        width: 100%;
+        max-width: 240px;
+        margin: auto 2rem;
+    }
+
+    .search_btn i {
+        color: var(--color-dark-charcoal);
+        font-size: 1.2rem;
+    }
+
+    .btn-signup-transparent {
+        background-color: transparent;
+        border: none !important;
+        color: var(--color-dark-charcoal) !important;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-signup-transparent:hover {
+        background-color: transparent !important;
+    }
+
+    .navbar-toggler {
+        border: none;
+        font-size: 1.7rem;
+        color: transparent;
+    }
+}
