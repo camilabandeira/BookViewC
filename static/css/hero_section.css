@@ -1,0 +1,51 @@
+.hero-section {
+    background-color: var(--color-light-gray) !important;
+    padding: 0 6rem !important;
+    background-color: var(--color-off-white);
+}
+
+.hero-title {
+    color: var(--color-dark-charcoal);
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-button {
+    background-color: var(--color-dark-charcoal);
+    color: var(--color-off-white);
+    padding: 0.75rem 1.5rem;
+    border: none;
+}
+
+.hero-button:hover {
+    background-color: var(--color-dark-charcoal);
+    color: var(--color-off-white);
+}
+
+.hero-image {
+    max-width: 100%;
+}
+
+@media (max-width: 768px),
+(min-width: 769px) and (max-width: 1180px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1.125rem;
+    }
+
+    .hero-section {
+        text-align: center;
+        padding: 2rem 1rem !important;
+    }
+
+}

@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/hero_section.css' %}">
+
+<section class="container-fluid hero-section">
+    <div class="row align-items-center">
+        <!-- Left Column: Text -->
+        <div class="col-lg-6">
+            <h1 class="hero-title">Read, Review and Reflect</h1>
+            <p class="hero-description">Delve deeper into your reading adventures and share your thoughts with a
+                like-minded community.</p>
+            <button class="btn hero-button">JOIN THE CLUB</button>
+        </div>
+
+        <!-- Right Column: Image -->
+        <div class="col-lg-6 text-center">
+            <img src="{% static 'images/hero_section_image.svg' %}" alt="Hero Illustration" class="hero-image">
+        </div>
+    </div>
+</section>
