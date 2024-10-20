@@ -165,6 +165,11 @@ hr {
     gap: 2rem;
 }
 
+.comment-msg {
+    padding: 2rem;
+    margin-bottom: -2rem;
+}
+
 .post-comment {
     background-color: var(--color-dark-charcoal);
     color: var(--color-neutral-gray);
