@@ -33,9 +33,22 @@ a {
     font-family: "Lato", sans-serif;
 }
 
-body {
+body,
+html {
     font-family: 'Lato', sans-serif;
     background-color: var(--color-light-gray);
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 /* -- Navbar styles -- */
@@ -121,11 +134,11 @@ body {
 
 /* Footer Styles */
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    padding: 20px;
     background-color: var(--color-neutral-gray);
     height: 6rem;
+
 }
 
 footer p {
