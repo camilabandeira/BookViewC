@@ -68,9 +68,10 @@ hr {
 
 
 .post-author a {
-    border-bottom: 1px solid var(--color-muted-gray);
+    text-transform: capitalize;
+    border-bottom: 1px solid var(--color-bright-blue);
     font-weight: 400;
-    color: var(--color-muted-gray);
+    color: var(--color-bright-blue);
 }
 
 .post-content {
