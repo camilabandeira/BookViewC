@@ -1,21 +1,17 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
-from django.contrib.auth.decorators import login_required
-from .models import Post, Comment
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView, LogoutView
-from django import forms
-from .forms import LoginForm
-
-
+from django.contrib.auth.models import User
+from .models import Post, Comment
+from .forms import LoginForm, ProfileUpdateForm, UserUpdateForm
 
 def homepage(request):
     posts = Post.objects.order_by('-created_on')
-    
     paginator = Paginator(posts, 3)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
-
     return render(request, 'blog/homepage.html', {'page_obj': page_obj})
 
 def about_page(request):
@@ -23,11 +19,9 @@ def about_page(request):
 
 def reviews_page(request):
     posts = Post.objects.order_by('-created_on')
-
     paginator = Paginator(posts, 6)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
-
     return render(request, 'blog/reviews_page.html', {'page_obj': page_obj})
 
 def post_detail(request, slug):
@@ -45,9 +39,38 @@ def post_detail(request, slug):
 
     return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments})
 
+def profile_view(request, username=None):
+    user_profile = get_object_or_404(User, username=username)
+    user_posts = Post.objects.filter(author=user_profile)
+    is_own_profile = request.user.is_authenticated and request.user == user_profile
+
+    context = {
+        'user_profile': user_profile,
+        'user_posts': user_posts,
+        'is_own_profile': is_own_profile, 
+    }
+    return render(request, 'blog/profile.html', context)
+
+@login_required
+def profile_update(request):
+    user_form = UserUpdateForm(request.POST or None, instance=request.user)
+    profile_form = ProfileUpdateForm(request.POST or None, request.FILES or None, instance=request.user.profile)
+
+    if request.method == 'POST' and user_form.is_valid() and profile_form.is_valid():
+        user_form.save()
+        profile_form.save()
+        messages.success(request, 'Your profile has been updated successfully!')
+        return redirect('profile', username=request.user.username)
+
+    context = {
+        'user_form': user_form,
+        'profile_form': profile_form
+    }
+    return render(request, 'blog/profile_update.html', context)
+
 class Login(LoginView):
     template_name = 'blog/login.html'
     form_class = LoginForm
 
 class Logout(LogoutView):
-    next_page = 'login' 
+    next_page = 'login'
