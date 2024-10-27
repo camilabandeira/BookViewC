@@ -84,6 +84,14 @@ main {
     font-weight: 900;
 }
 
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    border: 2px solid hsl(0, 0%, 87%);
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .logout-btn {
     background-color: var(--color-dark-charcoal);
     color: var(--color-off-white) !important;
@@ -96,6 +104,7 @@ main {
     text-align: center;
     font-weight: 700;
     padding: 1rem 3rem;
+    margin-right: 0.7rem;
 }
 
 
