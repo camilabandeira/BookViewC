@@ -3,15 +3,22 @@
 
 <section class="container-fluid hero-section">
     <div class="row align-items-center">
-        <!-- Left Column: Text -->
         <div class="col-lg-6">
             <h1 class="hero-title">Read, Review and Reflect</h1>
             <p class="hero-description">Delve deeper into your reading adventures and share your thoughts with a
                 like-minded community.</p>
-            <button class="btn hero-button">JOIN THE CLUB</button>
+
+            {% if user.is_authenticated %}
+                <form class="d-flex justify-content-center" role="search" method="GET" action="#">
+                    <input class="form-control me-2 search-box_hero" type="search" placeholder="Search..."
+                        aria-label="Search" name="q">
+                    <button class="btn search_btn_hero" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            {% else %}
+                <a href="#" class="btn hero-button">JOIN THE CLUB</a>
+            {% endif %}
         </div>
 
-        <!-- Right Column: Image -->
         <div class="col-lg-6 text-center">
             <img src="{% static 'images/hero_section_image.svg' %}" alt="Hero Illustration" class="hero-image">
         </div>
