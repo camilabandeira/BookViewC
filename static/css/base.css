@@ -87,7 +87,6 @@ main {
 .logout-btn {
     background-color: var(--color-dark-charcoal);
     color: var(--color-off-white) !important;
-    font-weight: 500;
     border-radius: 5px;
     width: 5.9rem;
     height: 1.9rem;
@@ -95,7 +94,8 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    cursor: pointer;
+    font-weight: 700;
+    padding: 1rem 3rem;
 }
 
 
