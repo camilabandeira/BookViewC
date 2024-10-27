@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate
-from .models import Comment
+from .models import Comment, Profile
 
 
 class CommentForm(forms.ModelForm):
@@ -39,3 +39,18 @@ class LoginForm(AuthenticationForm):
             )
 
         return self.cleaned_data
+        
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'username', 'email']
+
+class ProfileUpdateForm(forms.ModelForm):
+    profile_picture = forms.ImageField(
+        required=False,
+        widget=forms.FileInput(attrs={'class': 'update-profile-input'})
+    )
+
+    class Meta:
+        model = Profile
+        fields = ['profile_picture', 'bio', 'location']
