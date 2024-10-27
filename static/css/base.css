@@ -118,11 +118,12 @@ main {
 
 /* -- Search box styles -- */
 .search-box {
-    border: 1px solid var(--primary-text);
+    border: 1px solid hsl(0, 0%, 95%);
     border-radius: 20px;
     padding-left: 10px;
     color: var(--primary-text);
-    width: 12.5rem;
+    width: 13rem;
+    height: 2.1rem;
     margin-left: auto;
 }
 

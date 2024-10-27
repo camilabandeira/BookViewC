@@ -33,23 +33,6 @@
     max-width: 100%;
 }
 
-.search-box_hero {
-    position: relative;
-    right: 12rem;
-    top: -0.8rem;
-    width: 13rem;
-    height: 2.1rem;
-    border-radius: 50px;
-    border: 1px solid hsl(0, 0%, 95%);
-}
-
-
-.search_btn_hero {
-    position: relative;
-    right: 12.5rem;
-    top: -14px;
-}
-
 @media (max-width: 768px),
 (min-width: 769px) and (max-width: 1180px) {
     .hero-title {
