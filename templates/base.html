@@ -81,6 +81,13 @@
                     <li class="nav-item">
                         <a class="nav-link login-desktop logout-btn" href="{% url 'logout' %}">Logout</a>
                     </li>
+                     <!-- Foto do perfil como um link para o perfil do usuário -->
+                     <li class="nav-item d-flex align-items-center me-3">
+                        <a href="{% url 'profile' user.username %}">
+                            <img src="{% if user.profile.profile_picture %}{{ user.profile.profile_picture.url }}{% else %}{% static 'images/profile_image_default.jpeg' %}{% endif %}" 
+                                 alt="Profile Picture" class="profile-pic">
+                        </a>
+                    </li>                   
                     {% endif %}
                 </ul>
             </div>
