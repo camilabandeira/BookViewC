@@ -20,7 +20,10 @@
 .hero-button {
     background-color: var(--color-dark-charcoal);
     color: var(--color-off-white);
+    padding: 0.6rem 3rem;
     margin-top: -1.3rem;
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
 .hero-button:hover {
