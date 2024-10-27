@@ -39,6 +39,19 @@ def post_detail(request, slug):
 
     return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments})
 
+@login_required
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    if comment.author == request.user:
+        post_slug = comment.post.slug  # Get the post's slug before deleting the comment
+        comment.delete()
+        messages.success(request, 'Comment deleted successfully.')
+        return redirect('post_detail', slug=post_slug)
+    else:
+        messages.error(request, "You are not allowed to delete this comment.")
+        return redirect('post_detail', slug=comment.post.slug)
+
 def profile_view(request, username=None):
     user_profile = get_object_or_404(User, username=username)
     user_posts = Post.objects.filter(author=user_profile)
