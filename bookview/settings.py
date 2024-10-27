@@ -35,9 +35,12 @@ CSRF_TRUSTED_ORIGINS = [
     'https://bookviewc-7148162b5406.herokuapp.com',
 ]
 
+# Authentication
+LOGIN_REDIRECT_URL = '/' 
+LOGOUT_REDIRECT_URL = 'login'  
+
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

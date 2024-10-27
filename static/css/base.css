@@ -84,6 +84,25 @@ main {
     font-weight: 900;
 }
 
+.logout-btn {
+    background-color: var(--color-dark-charcoal);
+    color: var(--color-off-white) !important;
+    font-weight: 500;
+    border-radius: 5px;
+    width: 5.9rem;
+    height: 1.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.logout-btn:hover {
+    color: var(--color-off-white) !important;
+}
+
 /* -- Sign-Up button styles -- */
 .btn-signup {
     background-color: var(--color-dark-charcoal);
@@ -103,7 +122,8 @@ main {
     border-radius: 20px;
     padding-left: 10px;
     color: var(--primary-text);
-    width: 100%;
+    width: 12.5rem;
+    margin-left: auto;
 }
 
 /* -- Outline button styles -- */
@@ -116,11 +136,6 @@ main {
 }
 
 /* -- Search button styles -- */
-.search-box {
-    width: 12.5rem;
-    margin-left: auto;
-}
-
 .search_btn {
     background-color: transparent;
     border: none;

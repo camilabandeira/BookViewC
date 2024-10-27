@@ -3,6 +3,10 @@ from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from .models import Post, Comment
 from django.contrib import messages
+from django.contrib.auth.views import LoginView, LogoutView
+from django import forms
+from .forms import LoginForm
+
 
 
 def homepage(request):
@@ -28,10 +32,10 @@ def reviews_page(request):
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
-    comments = post.comments.all()  # Fetch the comments related to this post
+    comments = post.comments.all() 
 
     if request.method == 'POST' and request.user.is_authenticated:
-        content = request.POST.get('commentText')  # Match this with your form's textarea name
+        content = request.POST.get('commentText')  
         if content:
             Comment.objects.create(post=post, author=request.user, content=content)
             messages.success(request, 'Your comment has been posted.')
@@ -40,3 +44,10 @@ def post_detail(request, slug):
             messages.error(request, 'Comment cannot be empty.')
 
     return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments})
+
+class Login(LoginView):
+    template_name = 'blog/login.html'
+    form_class = LoginForm
+
+class Logout(LogoutView):
+    next_page = 'login' 

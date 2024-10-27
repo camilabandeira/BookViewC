@@ -52,7 +52,7 @@
                         </li>
                         {% else %}
                         <li class="nav-item d-lg-none">
-                            <a class="nav-link" href="#">Logout</a>
+                            <a class="nav-link logout-btn" href="{% url 'logout' %}">Logout</a>
                         </li>
                         {% endif %}
                     </ul>
@@ -69,13 +69,19 @@
                 </div>
 
                 <!-- Desktop Login/Sign-Up -->
-                <ul class="navbar-nav d-none d-lg-flex ms-auto">
+                <ul class="navbar-nav d-none d-lg-flex ms-auto align-items-center">
+                    {% if not user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link login-desktop" href="#">Login</a>
+                        <a class="nav-link login-desktop" href="{% url 'login' %}">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-signup" href="#">Sign-Up</a>
                     </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link login-desktop logout-btn" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>

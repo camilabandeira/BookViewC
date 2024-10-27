@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<div class="login-container">
+    <div class="login-form">
+        <h2>Welcome back! 👋</h2>
+        <h1>Sign in to your account</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-login-group">
+                <label for="email">Your email</label>
+                {{ form.username }}  <!-- Campo para email/username -->
+            </div>
+            <div class="input-login-group">
+                <label for="password">Password</label>
+                {{ form.password }}  <!-- Campo para senha -->
+            </div>
+            <button type="submit" class="login-btn">Continue</button>
+
+            <!-- Exibe mensagem de erro caso as credenciais estejam incorretas -->
+            {% if form.errors %}
+                <div class="alert alert-danger mt-3">
+                    <p>Oops! Something went wrong with your login. Please check your email and password and try again.</p>
+                </div>
+            {% endif %}
+        </form>
+        <div class="login-footer">
+            <p>Don’t have an account? <a href="">Sign up</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

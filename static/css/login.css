@@ -1,0 +1,89 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Form container */
+.login-form {
+    width: 100%;
+    padding: 2.5rem;
+    max-width: 30rem;
+    text-align: left;
+}
+
+/* Heading styles */
+.login-form h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2.2rem;
+    line-height: 1rem;
+}
+
+.login-form h2 {
+    font-size: 0.875rem;
+    margin-bottom: 0.625rem;
+    color: var(--color-muted-gray);
+}
+
+/* Input group styles */
+.input-login-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+.input-login-group label {
+    display: block;
+    margin-bottom: 0.3125rem;
+    font-size: 0.875rem;
+}
+
+.input-login-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.3125rem;
+    font-size: 1rem;
+}
+
+/* Button styles */
+.login-btn {
+    background-color: var(--color-dark-charcoal);
+    color: var(--color-off-white);
+    font-size: 1rem;
+    padding: 0.75rem;
+    width: 100%;
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: hsla(60, 8%, 16%, 0.888);
+}
+
+/* Footer styles */
+.login-footer {
+    text-align: center;
+    margin-top: 1.25rem;
+}
+
+.login-footer a {
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+.login-footer p {
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+}
+
+.login-footer p a {
+    font-weight: bold;
+}
