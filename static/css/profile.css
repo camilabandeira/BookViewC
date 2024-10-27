@@ -1,0 +1,251 @@
+/* Styles for the alert box */
+.alert-dismissible {
+    margin-top: 2rem;
+    padding-bottom: 0;
+}
+
+
+.alert-container .alert p {
+    text-align: center;
+}
+
+/* -- Profile Container Styles -- */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-light-gray);
+}
+
+/* -- Profile Wrappers -- */
+.profile-wrapper1,
+.profile-wrapper2,
+.profile-wrapper3 {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* -- Profile Header -- */
+.profile-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+/* -- Profile Image -- */
+.profile-img_wrapper {
+    position: relative;
+    flex-shrink: 0;
+    padding: 1.5625rem;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 9.375rem;
+    height: 9.375rem;
+    object-fit: cover;
+    border: 0.0625rem solid #ededed;
+}
+
+/* -- Divider between Profile Image and Info -- */
+.divider-profile {
+    border-left: 1px solid var(--color-muted-gray);
+    padding: 0.3125rem;
+    height: 8.125rem;
+}
+
+/* -- Profile Info Section -- */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.25rem;
+    font-weight: 300;
+    width: 35rem;
+    margin-top: 2.1rem;
+}
+
+.profile-info h1 {
+    line-height: 1.125rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.profile-info i {
+    color: var(--color-dark-charcoal);
+}
+
+.username {
+    font-size: 1.2rem;
+    margin-top: 0.3125rem;
+}
+
+.bio {
+    font-size: 1rem;
+    font-weight: 500;
+    color: hsl(0, 0%, 21%);
+    line-height: 1.3;
+    padding: 10px;
+    background-color: hsl(0, 0%, 94%);
+
+}
+
+.location {
+    position: relative;
+    bottom: -4rem;
+    color: var(--color-muted-gray);
+    text-align: right;
+}
+
+.joined {
+    text-align: right;
+    font-size: 0.875rem;
+    position: relative;
+    top: 4rem;
+}
+
+.profile-info h1,
+.profile-info p,
+.profile-info strong {
+    margin-bottom: 0.1875rem;
+}
+
+/* -- Edit Button Styling -- */
+.profile-edit {
+    position: relative;
+    top: -1.8rem;
+    left: 33rem;
+    margin-bottom: -2rem;
+}
+
+.edit-btn {
+    display: inline-block;
+    background-color: var(--color-off-white);
+    border: 0.0625rem solid #ececec;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    text-decoration: none;
+    box-shadow: 0 0.15rem 0.25rem rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: var(--color-off-white);
+}
+
+.edit-btn i {
+    font-size: 1rem;
+}
+
+/* -- User Posts Section -- */
+.user-posts {
+    margin-top: 5rem;
+}
+
+.user-posts h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-bottom: 1px solid #ddd;
+    width: 12rem;
+    padding-bottom: 0.4rem;
+}
+
+.user-posts ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-posts li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.user-posts li a {
+    font-weight: bold;
+    color: var(--color-bright-blue);
+    text-decoration: underline;
+}
+
+.user-posts li a:hover {
+    text-decoration: none;
+}
+
+.post-date {
+    font-size: 0.875rem;
+    color: var(--color-muted-gray);
+    margin-left: 10px;
+}
+
+.posts-on {
+    margin-top: -0.7rem;
+    font-weight: 700;
+    background-color: hsl(0, 0%, 94%);
+    width: 13.125rem;
+    padding: 0.3125rem;
+}
+
+/* -- Footer Image -- */
+.profile-wrapper3 {
+    width: 100%;
+}
+
+.footer-image {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* -- Responsive Design -- */
+
+/* -- Medium Devices (Tablets, 768px to 1024px) -- */
+@media (max-width: 1024px) {
+
+    .divider-profile {
+        display: none;
+    }
+
+    .profile-wrapper1,
+    .profile-wrapper2 {
+        width: 100%;
+    }
+
+    .profile-header {
+        flex-direction: column;
+    }
+
+    .profile-info {
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+
+    .user-posts {
+        width: 80%;
+    }
+
+    .profile-edit {
+        left: 20rem;
+    }
+}
+
+/* -- Small Devices (Phones, up to 575.98px) -- */
+@media (max-width: 575.98px) {
+
+    .profile-info {
+        width: 100%;
+
+    }
+
+    .profile-wrapper1,
+    .profile-wrapper2 {
+        padding: 0.8rem;
+    }
+}

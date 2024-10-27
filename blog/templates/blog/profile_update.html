@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Update Profile{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/profile_update.css' %}">
+
+<div class="update-profile-form-container">
+    <h2 class="update-profile-title">Update Profile</h2>
+    <div class="divider-update-profile"></div>
+
+    <form method="POST" enctype="multipart/form-data" class="update-profile-form">
+        {% csrf_token %}
+
+        <!-- Profile Picture Field -->
+        <div class="update-profile-group">
+            <label for="id_profile_picture" class="form-label">Profile Picture</label>
+            {{ profile_form.profile_picture }}
+        </div>
+
+        <!-- Other Profile Fields -->
+        <div class="update-profile-group">
+            <label for="id_first_name" class="form-label">First Name</label>
+            {{ user_form.first_name }}
+        </div>
+        <div class="update-profile-group">
+            <label for="id_last_name" class="form-label">Last Name</label>
+            {{ user_form.last_name }}
+        </div>
+        <div class="update-profile-group">
+            <label for="id_username" class="form-label">Username</label>
+            {{ user_form.username }}
+        </div>
+        <div class="update-profile-group">
+            <label for="id_email" class="form-label">Email</label>
+            {{ user_form.email }}
+        </div>
+        <div class="update-profile-group">
+            <label for="id_bio" class="form-label">Bio</label>
+            {{ profile_form.bio }}
+        </div>
+
+        <!-- Location Field -->
+        <div class="update-profile-group">
+            <label for="id_location" class="form-label">Location</label>
+            {{ profile_form.location }}
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="update-profile-submit-btn">Publish</button>
+    </form>
+</div>
+{% endblock %}
