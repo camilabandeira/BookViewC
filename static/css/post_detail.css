@@ -22,8 +22,6 @@ hr {
 
 }
 
-
-
 .post_detailed-container {
     max-width: 85%;
     margin: 0 auto;
@@ -66,7 +64,6 @@ hr {
     font-weight: 300;
 }
 
-
 .post-author a {
     text-transform: capitalize;
     border-bottom: 1px solid var(--color-bright-blue);
@@ -84,7 +81,7 @@ hr {
 .post_border {
     border-top: 1px solid var(--color-dark-charcoal);
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 1.875rem;
     padding-top: 2rem;
     width: 18%;
 }
@@ -101,7 +98,7 @@ hr {
 
 
 .comment-author {
-    padding-bottom: 10px;
+    padding-bottom: 0.625rem;
 }
 
 .comment-item,
@@ -110,21 +107,21 @@ hr {
 }
 
 .comment-author {
-    padding-bottom: 10px;
+    padding-bottom: 0.625rem;
 }
 
 .comment-item {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 5px;
+    padding-top: 0.3125rem;
 
 }
 
 .comment-actions {
     display: flex;
     justify-content: flex-end;
-    gap: 5px;
+    gap: 0.3125rem;
     margin-bottom: 10px;
     font-weight: bold;
     font-size: 0.9rem;
@@ -142,16 +139,16 @@ hr {
     display: flex;
     flex-direction: column;
     margin-top: 3rem;
-    gap: 1rem;
+    gap: 4rem;
 }
 
 .add-comment {
-    margin-bottom: -50px;
-    margin-left: 3px;
+    margin-bottom: -3.125rem;
+    margin-left: 0.4rem;
 }
 
 .comment-count {
-    margin-bottom: -10px;
+    margin-bottom: -0.625rem;
 }
 
 
@@ -174,8 +171,8 @@ hr {
 .post-comment {
     background-color: var(--color-dark-charcoal);
     color: var(--color-neutral-gray);
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.3125rem;
     font-weight: 600;
     width: 35%;
     cursor: pointer;
@@ -241,10 +238,6 @@ hr {
         font-size: 0.8rem;
     }
 
-    .add-comment-container {
-        margin-top: 1rem;
-    }
-
     .comment-form {
         gap: 1rem;
     }
@@ -260,10 +253,6 @@ hr {
 
     .comments-container {
         padding: 1rem;
-    }
-
-    .add-comment-container {
-        gap: 2rem;
     }
 
     .login-message {
