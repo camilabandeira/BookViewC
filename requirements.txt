@@ -44,3 +44,4 @@ urllib3==2.2.1
 virtualenv==20.26.6
 webencodings==0.5.1
 whitenoise==5.3.0
+django-environ
