@@ -71,6 +71,11 @@
     color: var(--color-off-white);
 }
 
+.read_full-post:hover {
+    background-color: #2b2b25f3;
+    color: var(--color-off-white);
+}
+
 .latest_reviews-pagination {
     display: flex;
     justify-content: center;
