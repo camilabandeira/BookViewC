@@ -65,7 +65,7 @@ def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
 
     if comment.author == request.user:
-        post_slug = comment.post.slug  # Get the post's slug before deleting the comment
+        post_slug = comment.post.slug 
         comment.delete()
         messages.success(request, 'Comment deleted successfully.')
         return redirect('post_detail', slug=post_slug)
