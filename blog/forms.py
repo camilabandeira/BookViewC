@@ -5,6 +5,25 @@ from django.contrib.auth import authenticate
 from .models import Comment, Profile
 
 
+
+class SignupForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput)
+    password_confirmation = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ['username', 'first_name', 'last_name', 'email', 'password']
+
+    def clean(self):
+        cleaned_data = super().clean()
+        password = cleaned_data.get("password")
+        password_confirmation = cleaned_data.get("password_confirmation")
+
+        if password != password_confirmation:
+            raise forms.ValidationError("Passwords do not match")
+        return cleaned_data
+
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
