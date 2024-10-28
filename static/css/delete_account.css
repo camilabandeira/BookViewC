@@ -1,0 +1,106 @@
+.delete-account-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-light-gray);
+}
+
+.trash-icon {
+    background-color: rgb(255 237 237);
+    width: 3.4375rem;
+    height: 3.4375rem;
+    border-radius: 3.125rem;
+    margin-top: 2rem;
+}
+
+.trash-icon i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+}
+
+.delete-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.625rem;
+    width: 600px;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.delete-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.delete-card h6 {
+    color: hsl(0, 81%, 50%);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.delete-card p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: -1.25rem;
+    font-weight: 400;
+    padding: 1rem;
+    border-radius: 0.3125rem;
+}
+
+.delete-card label {
+    font-weight: 700;
+}
+
+.delete-card input {
+    margin: 0.125rem 0 0 0.3125rem;
+}
+
+.delete-password {
+    font-weight: 300 !important;
+    margin: 0 0.7rem 0.6rem;
+}
+
+.delete-confirm-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.delete-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-dark-charcoal);
+    color: var(--color-off-white);
+    font-weight: 700;
+    padding: 1rem;
+    width: 6rem;
+    height: 2rem;
+    border-radius: 0.3125rem;
+    border: none;
+
+}
+
+.cancel-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-off-white);
+    color: var(--color-dark-charcoal);
+    font-weight: 700;
+    padding: 1rem;
+    width: 6rem;
+    height: 2rem;
+    border-radius: 0.3125rem;
+    border: 1px solid hsl(0, 0%, 90%);
+}
