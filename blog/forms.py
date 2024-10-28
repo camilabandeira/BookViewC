@@ -73,3 +73,7 @@ class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['profile_picture', 'bio', 'location']
+
+
+class DeleteAccountForm(forms.Form):
+    confirm = forms.BooleanField(label="I confirm that I want to delete my account.")
