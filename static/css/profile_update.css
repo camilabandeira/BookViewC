@@ -54,3 +54,14 @@ textarea {
 .update-profile-submit-btn:hover {
     background-color: hsla(60, 7%, 16%, 0.957);
 }
+
+
+.delete-btn {
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #aa2a2a;
+    color: var(--color-off-white);
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
