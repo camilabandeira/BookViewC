@@ -6,6 +6,10 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.models import User
 from .models import Post, Comment
 from .forms import LoginForm, ProfileUpdateForm, UserUpdateForm
+from .forms import SignupForm
+from django.contrib.auth import login
+
+
 
 def homepage(request):
     posts = Post.objects.order_by('-created_on')
@@ -23,6 +27,23 @@ def reviews_page(request):
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
     return render(request, 'blog/reviews_page.html', {'page_obj': page_obj})
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False) 
+            user.set_password(form.cleaned_data['password'])  
+            user.save()
+
+            login(request, user)
+            return redirect('profile', username=user.username)
+        else:
+            messages.error(request, "Please correct the errors below.")
+    else:
+        form = SignupForm()
+
+    return render(request, 'blog/signup.html', {'form': form})
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
