@@ -6,6 +6,15 @@
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
 <div class="login-container">
+    
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div class="alert {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+
     <div class="login-form">
         <h2>Welcome back! 👋</h2>
         <h1>Sign in to your account</h1>
@@ -13,15 +22,14 @@
             {% csrf_token %}
             <div class="input-login-group">
                 <label for="email">Your email or username</label>
-                {{ form.username }}  <!-- Campo para email/username -->
+                {{ form.username }} 
             </div>
             <div class="input-login-group">
                 <label for="password">Password</label>
-                {{ form.password }}  <!-- Campo para senha -->
+                {{ form.password }}  
             </div>
             <button type="submit" class="login-btn">Continue</button>
 
-            <!-- Exibe mensagem de erro caso as credenciais estejam incorretas -->
             {% if form.errors %}
                 <div class="alert alert-danger mt-3">
                     <p>Oops! Something went wrong with your login. Please check your email and password and try again.</p>
