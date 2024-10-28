@@ -13,13 +13,11 @@
     <form method="POST" enctype="multipart/form-data" class="update-profile-form">
         {% csrf_token %}
 
-        <!-- Profile Picture Field -->
         <div class="update-profile-group">
             <label for="id_profile_picture" class="form-label">Profile Picture</label>
             {{ profile_form.profile_picture }}
         </div>
 
-        <!-- Other Profile Fields -->
         <div class="update-profile-group">
             <label for="id_first_name" class="form-label">First Name</label>
             {{ user_form.first_name }}
@@ -41,14 +39,16 @@
             {{ profile_form.bio }}
         </div>
 
-        <!-- Location Field -->
         <div class="update-profile-group">
             <label for="id_location" class="form-label">Location</label>
             {{ profile_form.location }}
         </div>
 
-        <!-- Submit Button -->
         <button type="submit" class="update-profile-submit-btn">Publish</button>
+    </form>
+
+    <form action="{% url 'delete_account' %}" method="get" style="display: inline;">
+        <button type="submit" class="delete-btn">Delete Account</button>
     </form>
 </div>
 {% endblock %}
