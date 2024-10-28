@@ -45,10 +45,10 @@
                         </li>
                         {% if not user.is_authenticated %}
                         <li class="nav-item d-lg-none">
-                            <a class="nav-link" href="#">Login</a>
+                            <a class="nav-link login-desktop" href="{% url 'login' %}">Login</a>
                         </li>
                         <li class="nav-item d-lg-none">
-                            <a class="btn btn-signup btn-signup-transparent" href="#">Sign-Up</a>
+                            <a class="btn btn-signup" href="{% url 'signup' %}">Sign-Up</a>
                         </li>
                         {% else %}
                         <li class="nav-item d-lg-none">
@@ -75,7 +75,7 @@
                         <a class="nav-link login-desktop" href="{% url 'login' %}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-signup" href="#">Sign-Up</a>
+                        <a class="btn btn-signup" href="{% url 'signup' %}">Sign-Up</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
