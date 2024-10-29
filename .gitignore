@@ -1,27 +1,11 @@
-<<<<<<< HEAD
-# Ignore virtual environment directory
-venv/
-=======
 
 # Ignore virtual environments
 venv/
 .env
->>>>>>> 840f331 (chore: restructure project)
 
 # Ignore SQLite database file
 db.sqlite3
 
-<<<<<<< HEAD
-# Ignore environment variable file
-.env
-
-# Ignore directory for static files
-staticfiles/
-
-# Ignore compiled Python bytecode files
-__pycache__/
-*.py[cod]
-=======
 # Ignore directory for static files
 staticfiles/
 
@@ -38,4 +22,3 @@ __pycache__/
 # Ignore Django migrations
 **/migrations/
 
->>>>>>> 840f331 (chore: restructure project)
