@@ -6,10 +6,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 840f331 (chore: restructure project)
 # Django utilities for pagination, URL handling, and views
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
@@ -18,11 +14,7 @@ from django.views.generic import View
 
 # App-specific imports: forms and models
 from .forms import LoginForm, ProfileUpdateForm, UserUpdateForm, SignupForm, DeleteAccountForm
-<<<<<<< HEAD
-from .models import Post, Comment
-=======
 from .models import Post, Comment, Profile
->>>>>>> 840f331 (chore: restructure project)
 
 
 # Static Pages
