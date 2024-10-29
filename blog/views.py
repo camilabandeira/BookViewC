@@ -6,6 +6,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 840f331 (chore: restructure project)
 # Django utilities for pagination, URL handling, and views
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
@@ -14,7 +18,11 @@ from django.views.generic import View
 
 # App-specific imports: forms and models
 from .forms import LoginForm, ProfileUpdateForm, UserUpdateForm, SignupForm, DeleteAccountForm
+<<<<<<< HEAD
 from .models import Post, Comment
+=======
+from .models import Post, Comment, Profile
+>>>>>>> 840f331 (chore: restructure project)
 
 
 # Static Pages
@@ -96,8 +104,17 @@ def profile_view(request, username=None):
 
 @login_required
 def profile_update(request):
+<<<<<<< HEAD
     user_form = UserUpdateForm(request.POST or None, instance=request.user)
     profile_form = ProfileUpdateForm(request.POST or None, request.FILES or None, instance=request.user.profile)
+=======
+    try:
+        user_form = UserUpdateForm(request.POST or None, instance=request.user)
+        profile_form = ProfileUpdateForm(request.POST or None, request.FILES or None, instance=request.user.profile)
+    except Profile.DoesNotExist:
+        messages.error(request, "Profile does not exist for this user. Please contact support.")
+        return redirect('homepage') 
+>>>>>>> 840f331 (chore: restructure project)
 
     if request.method == 'POST' and user_form.is_valid() and profile_form.is_valid():
         user_form.save()
