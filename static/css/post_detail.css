@@ -2,7 +2,6 @@ hr {
     border-top: 1px solid #e1e1e1;
 }
 
-/* Post container */
 .post-container {
     margin: 0;
     background-color: var(--color-light-gray);
@@ -46,8 +45,6 @@ hr {
     position: relative;
 
 }
-
-
 
 .post_detailed-container {
     max-width: 85%;
@@ -113,8 +110,6 @@ hr {
     padding-top: 2rem;
     width: 18%;
 }
-
-/* Comments Section */
 
 .alert-dismissible {
     margin-top: 2rem;
@@ -222,7 +217,6 @@ hr {
     background-color: #546CFF;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
     .post-edit-dlt {
         top: -1rem;

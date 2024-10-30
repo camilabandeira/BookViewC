@@ -44,7 +44,6 @@
                             <a class="nav-link" href="{% url 'about'%}">About</a>
                         </li>
                         {% if user.is_authenticated %}
-                        <!-- Opções para usuários autenticados na versão mobile -->
                         <li class="nav-item d-lg-none">
                             <a href="{% url 'profile' user.username %}">
                                 <img src="{% if user.profile.profile_picture %}{{ user.profile.profile_picture.url }}{% else %}{% static 'images/profile_image_default.jpeg' %}{% endif %}" 
