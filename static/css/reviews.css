@@ -1,19 +1,5 @@
 .reviews-wrapper {
     background-color: var(--color-neutral-gray);
-
-}
-
-.card-img-top {
-    object-fit: cover;
-    height: 12.5rem;
-    border-bottom: 5px solid #565656;
-}
-
-.latest_review-card {
-    height: 460px;
-    width: 94%;
-    margin: 0 auto;
-    margin-bottom: 5.625rem
 }
 
 .latest_review-wrapper {
@@ -22,21 +8,7 @@
     width: 100%;
     padding: 0 3rem;
     margin-bottom: 1rem;
-    gap: 1;
-}
-
-.review-content {
-    max-height: 100px;
-    overflow: hidden;
-}
-
-.latest_review {
-    padding: 2rem 2rem 5rem !important;
-}
-
-.latest_title-section {
-    font-weight: 900;
-    padding: 2rem;
+    gap: 1rem;
 }
 
 .container-fluid {
@@ -45,10 +17,30 @@
     margin: 0;
 }
 
+.latest_review-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 28.75rem;
+    /* Adjust as needed */
+    width: 94%;
+    margin: 0 auto 5.625rem;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 12.5rem;
+    border-bottom: 0.3125rem solid #565656;
+}
+
 .card-title,
 .card-text,
 .review-content {
-    font-family: "Lato", ;
+    font-family: "Lato";
 }
 
 .card-title {
@@ -63,17 +55,38 @@
 }
 
 .review-content {
+    max-height: 6.25rem;
+    overflow: hidden;
     margin-top: -0.625rem;
+}
+
+.full_post-box {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
 }
 
 .read_full-post {
     background-color: var(--color-dark-charcoal);
     color: var(--color-off-white);
+    padding: 0.5rem 1rem;
+    border-radius: 0.3125rem;
+    text-decoration: none;
+    margin-top: 1rem;
 }
 
 .read_full-post:hover {
-    background-color: #2b2b25f3;
+    background-color: hsla(60, 8%, 16%, 0.965);
     color: var(--color-off-white);
+}
+
+.latest_title-section {
+    font-weight: 900;
+    padding: 2rem;
+}
+
+.latest_review {
+    padding: 2rem 2rem 5rem !important;
 }
 
 .latest_reviews-pagination {
@@ -106,7 +119,6 @@
     color: var(--color-dark-charcoal);
 }
 
-
 @media (max-width: 768px),
 (min-width: 769px) and (max-width: 1180px) {
     .latest_review-wrapper {
@@ -116,6 +128,5 @@
     .card-title {
         font-size: 1.0625rem;
         justify-content: center;
-
     }
 }
