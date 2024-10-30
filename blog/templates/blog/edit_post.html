@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Edit Post{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/write_review.css' %}">
+
+<div class="review-form-container">
+    {% if messages %}
+    <div class="alert-container">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                <p>{{ message }}</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="review-form-group">
+        <form action="{% url 'edit_post' post.slug %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <h1>Edit Post</h1>
+            <div class="divider-write-review"></div>
+
+            <label for="review-title">Title</label>
+            <input type="text" id="review-title" name="title" value="{{ form.title.value|default_if_none:'' }}" required>
+
+            <label for="review-post-image">Post Image</label>
+            <input type="file" id="review-post-image" name="cover_image">
+
+            <label for="review-excerpt">Excerpt</label>
+            <textarea id="review-excerpt" name="excerpt" rows="3" placeholder="Please write a short description for your post...">{{ form.excerpt.value|default_if_none:'' }}</textarea>
+
+            <label for="review-content">Content</label>
+            <textarea id="review-content" name="content" rows="6" placeholder="Please write your content...">{{ form.content.value|default_if_none:'' }}</textarea>
+
+            <div class="review-category">
+                <label for="review-category">Category</label>
+                {{ form.category }}
+            </div>
+            
+            <div class="submit-change-btn">
+            <button type="submit">Save Changes</button>
+            <a href="{% url 'post_detail' post.slug %}" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
