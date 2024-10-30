@@ -5,17 +5,20 @@
         {% for post in posts %}
         <div class="col">
             <div class="card latest_review-card">
-                <img src="{% if post.get_post_image %}{{ post.get_post_image }}{% else %}{% static 'images/default_image_post.svg' %}{% endif %}" class="card-img-top" alt="Review Image">
+                <img src="{% if post.get_post_image %}{{ post.get_post_image }}{% else %}{% static 'images/default_image_post.svg' %}{% endif %}" 
+                     class="card-img-top" alt="Review Image">
                 <div class="card-body">
-                    <h5 class="card-title">{{ post.title }}</h5>
+                    <h5 class="card-title">
+                        <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
+                    </h5>
                     <p class="card-text">
                         <small class="text-muted">Published by {{ post.author }} on {{ post.created_on|date:"M d, Y" }}</small>
                     </p>
                     <p class="review-content">
-                        {{ post.excerpt|truncatewords:30 }}
+                        {{ post.excerpt|default_if_none:"No excerpt available" |truncatewords:30 }}
                     </p>
-                    <div class="text-end">
-                        <a href="{% url 'post_detail' post.slug %}" class="btn read_full-post">Read full post</a>
+                    <div class="full_post-box">
+                        <a href="{% url 'post_detail' post.slug %}" class="read_full-post">Read full post</a>
                     </div>
                 </div>
             </div>
