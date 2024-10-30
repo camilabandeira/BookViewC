@@ -1,0 +1,120 @@
+.review-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-light-gray);
+    padding: 1.25rem;
+    width: 100%;
+}
+
+.review-form-group {
+    width: 35rem;
+    padding: 3rem;
+}
+
+.review-form-group h1 {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.divider-write-review {
+    border-bottom: 1px solid hsl(0deg 0% 89.35%);
+    width: 7rem;
+    margin: auto;
+    margin-bottom: 2.5rem;
+}
+
+.review-form-group label {
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 0.625rem;
+}
+
+.review-form-group input {
+    border: none;
+}
+
+#review-title,
+#review-post-image,
+#review-excerpt,
+#review-content {
+    width: 100%;
+    padding: 0.625rem;
+    margin-top: 0.3125rem;
+    border-radius: 0.25rem;
+    outline: none;
+    border: 1px solid hsl(0, 0%, 91%);
+}
+
+#review-excerpt,
+#review-content {
+    resize: none;
+}
+
+.review-category label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.3125rem;
+    display: block;
+}
+
+.review-category select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid hsl(0, 0%, 91%);
+    border-radius: 0.3125rem;
+}
+
+::placeholder {
+    padding: 0;
+}
+
+.review-submit-btn {
+    background-color: var(--color-dark-charcoal);
+    color: var(--color-off-white);
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1.25rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.review-submit-btn:hover {
+    background-color: hsla(60, 8%, 16%, 0.972);
+    color: var(--color-off-white);
+}
+
+@media (max-width: 48rem) {
+    .review-form-group {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
+/* Edit Review */
+.submit-change-btn {
+    display: flex;
+    gap: 1rem;
+}
+
+.submit-change-btn a,
+.submit-change-btn button {
+    background-color: var(--color-dark-charcoal);
+    color: var(--color-off-white);
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1.25rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
