@@ -10,11 +10,13 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
+from django.utils.text import slugify 
 from django.views.generic import View
 
 # App-specific imports: forms and models
-from .forms import LoginForm, ProfileUpdateForm, UserUpdateForm, SignupForm, DeleteAccountForm
+from .forms import LoginForm, ProfileUpdateForm, UserUpdateForm, SignupForm, DeleteAccountForm, PostForm 
 from .models import Post, Comment, Profile
+
 
 
 # Static Pages
@@ -115,6 +117,55 @@ def profile_update(request):
     }
     return render(request, 'blog/profile_update.html', context)
 
+@login_required
+def write_review(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            base_slug = slugify(post.title)
+            slug = base_slug
+            counter = 1
+            
+            while Post.objects.filter(slug=slug).exists():
+                slug = f"{base_slug}-{counter}"
+                counter += 1
+
+            post.slug = slug  
+            post.save()
+            messages.success(request, 'Your review has been successfully posted!')
+            return redirect('post_detail', slug=post.slug)
+        else:
+            messages.error(request, 'There was an error with your submission. Please check the form and try again.')
+    else:
+        form = PostForm()
+    
+    return render(request, 'blog/write_review.html', {'form': form})
+
+# Edit Post View
+@login_required
+def edit_post(request, slug):
+    post = get_object_or_404(Post, slug=slug, author=request.user)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Post updated successfully.")
+            return redirect('post_detail', slug=post.slug)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'blog/edit_post.html', {'form': form, 'post': post})
+
+# Delete Post View
+@login_required
+def delete_post(request, slug):
+    post = get_object_or_404(Post, slug=slug, author=request.user)
+    if request.method == 'POST':
+        post.delete()
+        messages.success(request, "Post deleted successfully.")
+        return redirect('profile', username=request.user.username)
+    return render(request, 'blog/confirm_delete_post.html', {'post': post})
 
 # Post Views
 def post_detail(request, slug):
