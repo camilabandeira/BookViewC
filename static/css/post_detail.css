@@ -9,6 +9,31 @@ hr {
     text-align: justify;
 }
 
+.post-edit-dlt {
+    display: flex;
+    position: relative;
+    top: -3rem;
+    left: 8rem;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.review-edit-btn,
+.review-dlt-btn {
+    background-color: var(--color-off-white);
+    border: 0.0625rem solid #ececec;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    text-decoration: none;
+    box-shadow: 0 0.15rem 0.25rem rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
 .cover_image-container {
     border-bottom: 0.4375rem solid #565656;
 }
@@ -18,7 +43,7 @@ hr {
     height: 35vh;
     object-fit: cover;
     object-position: center;
-    margin-left: 3rem;
+    position: relative;
 
 }
 
@@ -199,6 +224,12 @@ hr {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    .post-edit-dlt {
+        top: -1rem;
+        left: 0;
+        justify-content: flex-end;
+    }
+
     .post_detailed-container {
         padding: 0 0.5rem;
         min-width: 100%;
