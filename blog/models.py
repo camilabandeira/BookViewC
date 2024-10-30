@@ -22,7 +22,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=250, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    excerpt = models.TextField(blank=True)
+    excerpt = models.TextField(blank=True, null=True)
     content = models.TextField()
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
     created_on = models.DateTimeField(auto_now_add=True)
