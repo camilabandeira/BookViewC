@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate
-from .models import Comment, Profile
+from .models import Comment, Profile, Post
 
 
 
@@ -23,6 +23,13 @@ class SignupForm(forms.ModelForm):
             raise forms.ValidationError("Passwords do not match")
         return cleaned_data
 
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['title', 'excerpt', 'content', 'category', 'cover_image'] 
+        widgets = {
+            'content': forms.Textarea(attrs={'rows': 5}),
+        }
 
 class CommentForm(forms.ModelForm):
     class Meta:
