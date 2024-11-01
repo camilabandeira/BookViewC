@@ -89,6 +89,8 @@ class ProfileUpdateForm(forms.ModelForm):
         required=False,
         widget=forms.FileInput(attrs={'class': 'update-profile-input'})
     )
+    bio = forms.CharField(widget=forms.Textarea(attrs={'maxlength': '150'}), required=False)
+    
 
     class Meta:
         model = Profile
