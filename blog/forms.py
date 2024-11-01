@@ -97,3 +97,7 @@ class ProfileUpdateForm(forms.ModelForm):
 
 class DeleteAccountForm(forms.Form):
     confirm = forms.BooleanField(label="I confirm that I want to delete my account.")
+
+
+class SearchForm(forms.Form):
+    query = forms.CharField(label="Search", max_length=100, required=False)
