@@ -1,0 +1,43 @@
+.confirm_delete_post {
+    background-color: var(--color-light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.confirm_delete_wrapper {
+    background-color: var(--color-light-gray);
+    width: 100%;
+    max-width: 31.25rem;
+    padding: 2rem;
+    margin-top: 8rem;
+    text-align: center;
+}
+
+.confirm_delete_wrapper h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.confirm-delete_btn,
+.cancel-delete_btn {
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--color-off-white);
+    cursor: pointer;
+    width: 6.25rem;
+    padding: 0.5rem;
+
+}
+
+.confirm-delete_btn {
+    background-color: var(--color-dark-charcoal);
+    color: var(--color-off-white);
+}
+
+.cancel-delete_btn {
+    background-color: var(--color-muted-gray);
+    padding: 0.6rem;
+}
