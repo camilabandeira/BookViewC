@@ -45,3 +45,5 @@ virtualenv==20.26.6
 webencodings==0.5.1
 whitenoise==5.3.0
 django-environ
+pip3 install django-summernote~=0.8.20.0
+
