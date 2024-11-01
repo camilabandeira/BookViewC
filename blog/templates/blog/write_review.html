@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-
 {% load static %}
+
 
 {% block title %}Write a Review{% endblock %}
 
@@ -36,7 +36,7 @@
             <textarea id="review-excerpt" name="excerpt" rows="3" placeholder="Please write a short description for your post...">{{ form.excerpt.value|default_if_none:'' }}</textarea>
 
             <label for="review-content">Content</label>
-            <textarea id="review-content" name="content" rows="6" placeholder="Please write your content...">{{ form.content.value|default_if_none:'' }}</textarea>
+            {{ form.content }}
 
             <div class="review-category">
                 <label for="review-category">Category</label>
@@ -46,5 +46,4 @@
         </form>
     </div>
 </div>
-
 {% endblock %}
