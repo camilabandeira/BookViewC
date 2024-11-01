@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/search_results.css' %}">
+    <section class="search_results">
+        <div class="search_wrapper">
+            <h1>Search Results</h1>
+  
+            {% if query %}
+                <h2>Results for "{{ query }}":</h2>
+                {% if page_obj and page_obj.object_list %}
+                    <ul>
+                        {% for post in page_obj %}
+                            <li>
+                                <a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a>
+                                <a href="{% url 'post_detail' slug=post.slug %}" class="excerpt-link">
+                                    {{ post.excerpt|slice:":200" }}{% if post.excerpt|length > 200 %}...{% endif %}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                   
+        </div>
+
+         <!-- Pagination controls -->
+         <div class="search_pagination">
+            {% if page_obj.has_previous %}
+                <a href="?q={{ query }}&page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+            <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+            {% if page_obj.has_next %}
+                <a href="?q={{ query }}&page={{ page_obj.next_page_number }}">Next</a>
+            {% endif %}
+        </div>
+    {% else %}
+        <p>No results found for "{{ query }}".</p>
+    {% endif %}
+{% else %}
+    <p>Enter a search term to see results.</p>
+{% endif %}
+    </section>
+{% endblock %}
