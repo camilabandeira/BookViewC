@@ -1,11 +1,21 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Delete Post{% endblock %}
+
+
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/confirm_delete_post.css' %}">
+
+<section class="confirm_delete_post">
+    <div class="confirm_delete_wrapper">
 <h1>Confirm Deletion</h1>
-<p>Are you sure you want to delete the post "{{ post.title }}"?</p>
+<p>Are you sure you want to delete the post <strong>"{{ post.title }}"</strong>?</p>
 <form method="POST">
     {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Delete</button>
-    <a href="{% url 'post_detail' post.slug %}" class="btn btn-secondary">Cancel</a>
+    <button type="submit" class="confirm-delete_btn">Delete</button>
+    <a href="{% url 'post_detail' post.slug %}" class="cancel-delete_btn">Cancel</a>
 </form>
+
+</div>
+</section>
 {% endblock %}
