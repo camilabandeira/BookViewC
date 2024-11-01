@@ -12,10 +12,15 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.utils.text import slugify 
 from django.views.generic import View
+from django.db.models import Q 
 
 # App-specific imports: forms and models
-from .forms import LoginForm, ProfileUpdateForm, UserUpdateForm, SignupForm, DeleteAccountForm, PostForm 
+from .forms import (
+    LoginForm, ProfileUpdateForm, UserUpdateForm, 
+    SignupForm, DeleteAccountForm, PostForm, SearchForm
+)
 from .models import Post, Comment, Profile
+
 
 
 
@@ -197,3 +202,22 @@ def delete_comment(request, comment_id):
     else:
         messages.error(request, "You are not allowed to delete this comment.")
         return redirect('post_detail', slug=comment.post.slug)
+
+# Search View
+def search_posts(request):
+    query = request.GET.get('q')
+    if query:
+        posts = Post.objects.filter(
+            Q(title__icontains=query) |
+            Q(content__icontains=query) |
+            Q(category__icontains=query) |
+            Q(author__username__icontains=query)
+        ).distinct()
+    else:
+        posts = Post.objects.all()
+
+    paginator = Paginator(posts, 3)
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'blog/search_results.html', {'page_obj': page_obj, 'query': query})
