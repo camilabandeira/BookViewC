@@ -40,7 +40,10 @@
                 {% endif %}
 
                 <strong class="username">@{{ user_profile.username }}</strong>
-                <p class="bio">{{ user_profile.profile.bio }}</p>
+
+                {% if user_profile.profile.bio %}
+                    <p class="bio">{{ user_profile.profile.bio }}</p>
+                {% endif %}
 
                 <p class="location">
                     {% if user_profile.profile.location %}
