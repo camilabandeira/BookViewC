@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate
+from django_summernote.widgets import SummernoteWidget
 from .models import Comment, Profile, Post
 
 
@@ -28,7 +29,19 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ['title', 'excerpt', 'content', 'category', 'cover_image'] 
         widgets = {
-            'content': forms.Textarea(attrs={'rows': 5}),
+            'content': SummernoteWidget(attrs={
+                'summernote': {
+                    'toolbar': [
+                        ['style', ['style']],
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['insert', ['link', 'picture']],
+                    ],
+                    'width': '100%',
+                    'height': '300px',
+                    'placeholder': 'Write your content here...',
+                }
+            }),
         }
 
 class CommentForm(forms.ModelForm):
