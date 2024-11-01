@@ -65,17 +65,14 @@
                         </li>
                     {% endif %}
                     </ul>
-
-                    <!-- Search Form -->
-                    <form class="d-flex justify-content-center w-100 mt-3 mt-lg-0 ms-lg-auto" role="search" method="GET"
-                        action="#">
-                        <input class="form-control me-2 search-box" type="search" placeholder="Search..."
-                            aria-label="Search" name="q">
+                
+                     <!-- Search Form -->
+                    <form class="d-flex justify-content-center w-100 mt-3 mt-lg-0 ms-lg-auto" role="search" method="GET" action="{% url 'search_posts' %}">
+                        <input class="form-control me-2 search-box" type="search" placeholder="Search..." aria-label="Search" name="q" value="{{ request.GET.q|default_if_none:'' }}">
                         <button class="search_btn" type="submit">
                             <i class="bi bi-search"></i>
-                        </button>
+                         </button>
                     </form>
-                </div>
 
                 <!-- Desktop Login/Sign-Up -->
                 <ul class="navbar-nav d-none d-lg-flex ms-auto align-items-center">
