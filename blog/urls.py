@@ -17,4 +17,5 @@ urlpatterns = [
     path('profile/<str:username>/', views.profile_view, name='profile'),
     path('signup/', views.signup, name='signup'),
     path('account/delete/', DeleteAccountView.as_view(), name='delete_account'),
+    path('search/', views.search_posts, name='search_posts')
 ]
