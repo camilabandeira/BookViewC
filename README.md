@@ -36,8 +36,6 @@
 - [Credits](#credits)
 
 
-
-
 # User Experience (UX)
 
 BookView is designed with simplicity and community engagement in mind, providing an intuitive and enjoyable experience for book lovers. Here's an overview of the key features and user journey on the platform:
