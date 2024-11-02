@@ -36,8 +36,8 @@ h2 {
 
 .excerpt-link {
     display: block;
-    margin: 0.5rem 0.9rem;
-    margin: 0 0.7rem;
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
     font-weight: 300;
     text-decoration: underline;
     color: var(--color-muted-gray);
