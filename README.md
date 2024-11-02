@@ -12,27 +12,29 @@
 
 ## Table of Contents
 
-1. [Overview](#overview)
-2. [User Experience (UX)](#user-experience-ux)
-   - [User Stories](#user-stories)
-   - [Goals](#goals)
-3. [Design](#design)
-   - [Color Scheme](#color-scheme)
-   - [Typography](#typography)
-   - [Wireframes](#wireframes)
-   - [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
-4. [Methodology](#methodology)
-   - [Agile Approach](#agile-approach)
-5. [Key Features](#key-features)
-   - [Homepage](#homepage)
-   - [Profile Page](#profile-page)
-   - [Review Pages](#review-pages)
-6. [Technologies Used](#technologies-used)
-7. [Deployment & Development](#deployment--development)
-   - [Local Setup](#local-setup)
-   - [Deployment Process](#deployment-process)
-8. [Testing](#testing)
-9. [Credits](#credits)
+## Table of Contents
+
+- [User Experience (UX)](#user-experience-ux)
+  - [User Stories](#user-stories)
+  - [Goals](#goals)
+- [Design](#design)
+  - [Color Scheme](#color-scheme)
+  - [Typography](#typography)
+  - [Wireframes](#wireframes)
+  - [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
+- [Methodology](#methodology)
+  - [Agile Approach](#agile-approach)
+- [Key Features](#key-features)
+  - [Homepage](#homepage)
+  - [Profile Page](#profile-page)
+  - [Review Pages](#review-pages)
+- [Technologies Used](#technologies-used)
+- [Deployment & Development](#deployment--development)
+  - [Local Setup](#local-setup)
+  - [Deployment Process](#deployment-process)
+- [Testing](#testing)
+- [Credits](#credits)
+
 
 
 
