@@ -216,7 +216,7 @@ hr {
 }
 
 .post-comment:hover {
-    background-color: #546CFF;
+    background-color: var(--color-primary-blue);
 }
 
 @media (max-width: 768px) {
