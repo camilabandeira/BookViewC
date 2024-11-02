@@ -1,30 +1,30 @@
 {% load static %}
 
-<div class="latest_review-wrapper">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+<link rel="stylesheet" href="{% static 'css/review_list.css' %}">
+
+
+
+    <div class="review_card-wrapper"> 
         {% for post in posts %}
-        <div class="col">
-            <div class="card latest_review-card">
+        <div class="review-card">
                 <img src="{% if post.get_post_image %}{{ post.get_post_image }}{% else %}{% static 'images/default_image_post.svg' %}{% endif %}" 
                      class="card-img-top" alt="Review Image">
                 <div class="card-body">
-                    <h5 class="card-title">
+                    <div class="card_title">
                         <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
-                    </h5>
-                    <p class="card-text">
-                        <small class="text-muted">Published by {{ post.author }} on {{ post.created_on|date:"M d, Y" }}</small>
-                    </p>
+                    </div>
+                        <small>Published by {{ post.author }} on {{ post.created_on|date:"M d, Y" }}</small>
+
                     <p class="review-content">
                         {{ post.excerpt|default_if_none:"No excerpt available" |truncatewords:30 }}
                     </p>
-                    <div class="full_post-box">
+                    <div class="full_post-btn">
                         <a href="{% url 'post_detail' post.slug %}" class="read_full-post">Read full post</a>
                     </div>
                 </div>
             </div>
-        </div>
         {% empty %}
         <p>No reviews available at the moment.</p>
         {% endfor %}
-    </div>
+
 </div>

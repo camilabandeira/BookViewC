@@ -8,12 +8,9 @@
 {% block content %}
 
 {% include 'includes/hero_section.html' %}
-
-<div class="reviews-wrapper"> 
-    <h2 class="latest_title-section text-center">Latest Reviews</h2>
-
-     {% include 'includes/review_list.html' with posts=page_obj %}
-     </div>
-    
+<div class="review_card-container">
+    <h2>Latest Reviews</h2>
+{% include 'includes/review_list.html' with posts=page_obj %}
+</div>    
 {% include 'includes/signup_section.html' %}
 {% endblock %}
