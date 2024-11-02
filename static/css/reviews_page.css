@@ -1,13 +1,3 @@
-:root {
-    --color-dark-charcoal: #2B2B25;
-    --color-deep-purple: #1D1141;
-    --color-muted-gray: #888;
-    --color-bright-blue: #546CFF;
-    --color-light-gray: #F9F9F9;
-    --color-neutral-gray: #F5F5F5;
-    --color-off-white: #FCFCFC;
-}
-
 .reviews-container {
     display: flex;
     flex-direction: column;
