@@ -20,7 +20,7 @@ hr {
 .review-edit-btn,
 .review-dlt-btn {
     background-color: var(--color-off-white);
-    border: 0.0625rem solid #ececec;
+    border: 0.0625rem solid hsl(0, 0%, 93%);
     border-radius: 50%;
     width: 2.5rem;
     height: 2.5rem;
@@ -37,13 +37,15 @@ hr {
     border-bottom: 0.4375rem solid #565656;
 }
 
+.cover_image-container .col-12 {
+    padding: 0;
+}
+
 .post-cover-image {
-    width: 100%;
+    width: 100vw;
     height: 35vh;
     object-fit: cover;
     object-position: center;
-    position: relative;
-
 }
 
 .post_detailed-container {
