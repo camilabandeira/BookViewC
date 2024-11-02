@@ -1,50 +1,39 @@
-<h1 align="center"> BookView - Code Institute Project 4</h1>
+<div align="center">
+  <h1>BookView - Code Institute Project 4</h1>
+</div>
 
 <a href="https://bookviewc-7148162b5406.herokuapp.com/"><strong>BookView</a></strong> is a full-stack blog platform built using Django that allows users to create, share, and engage with book reviews. It provides a space for book lovers to express their thoughts and opinions, explore new literary works, and interact with a community of like-minded readers. The platform combines robust back-end functionality with an intuitive front-end interface, making it easy for users to contribute reviews and comment on posts.
 
 <img src="https://github.com/user-attachments/assets/7f488f67-3863-4c0f-9cb7-d65484b0542a">
 
 <div align="center">
-  <a href="https://bookviewc-7148162b5406.herokuapp.com/><strong>Live Project</strong></a>
+  <img src="https://github.com/user-attachments/assets/7f488f67-3863-4c0f-9cb7-d65484b0542a" alt="BookView Preview">
 </div>
 
 ## Table of Contents
 
-1. [BookView Overview](#bookview-overview)
+1. [Overview](#overview)
 2. [User Experience (UX)](#user-experience-ux)
    - [User Stories](#user-stories)
-     - [Site Owner Goals](#site-owner-goals)
-     - [User Goals](#user-goals)
-3. [Color Scheme](#color-scheme)
-4. [Typography](#typography)
-5. [Wireframes](#wireframes)
-6. [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
-7. [Agile Methodology](#agile-methodology)
-8. [Features](#features)
+   - [Goals](#goals)
+3. [Design](#design)
+   - [Color Scheme](#color-scheme)
+   - [Typography](#typography)
+   - [Wireframes](#wireframes)
+   - [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
+4. [Methodology](#methodology)
+   - [Agile Approach](#agile-approach)
+5. [Key Features](#key-features)
    - [Homepage](#homepage)
-     - [Navigation Bar](#navigation-bar)
-     - [Homepage Banner](#homepage-banner)
-     - [Latest Reviews Section](#latest-reviews-section)
-     - [Call to Action (Sign-Up Prompt)](#call-to-action-sign-up-prompt)
-     - [Footer](#footer)
-     - [Homepage (Logged In)](#homepage-logged-in)
-   - [My Reviews Page](#my-reviews-page)
-   - [Login Page](#login-page)
-   - [Sign-Up Page](#sign-up-page)
-   - [Post Review Page](#post-review-page)
    - [Profile Page](#profile-page)
-     - [Profile Page (Logged In)](#profile-page-logged-in)
-     - [Update Profile Page](#update-profile-page)
-   - [Write a Review Page](#write-a-review-page)
-   - [About Page](#about-page)
-9. [Technologies](#technologies)
-   - [Programming Languages](#programming-languages)
-   - [Applications and Libraries](#applications-and-libraries)
-10. [Deployment & Local Development](#deployment--local-development)
-    - [Local Development](#local-development)
-    - [Deployment](#deployment)
-11. [Testing](#testing)
-12. [Credits](#credits)
+   - [Review Pages](#review-pages)
+6. [Technologies Used](#technologies-used)
+7. [Deployment & Development](#deployment--development)
+   - [Local Setup](#local-setup)
+   - [Deployment Process](#deployment-process)
+8. [Testing](#testing)
+9. [Credits](#credits)
+
 
 
 # User Experience (UX)
