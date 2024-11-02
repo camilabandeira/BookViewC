@@ -11,7 +11,7 @@
 
 .signup_page-form h1,
 .signup_page-form h2 {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     font-weight: 400;
 }
 
@@ -32,17 +32,16 @@
 
 .signup_page-input-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem;
     font-size: 0.9rem;
 }
 
 .signup_page-input-group input {
     width: 100%;
-    padding: 10px;
+    padding: 0.625rem;
     font-size: 0.9rem;
-    border: 1px solid #e8e8e8;
+    border: 0.0625rem solid #e8e8e8;
     border-radius: 0.3125rem;
-
 }
 
 .signup_page-input-group input:focus {
@@ -78,11 +77,9 @@
     width: 100%;
 }
 
-
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 26.5625rem) {
     .signup_page-container {
         padding: 2rem;
-
     }
 
     .signup_page-form {

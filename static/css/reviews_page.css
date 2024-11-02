@@ -17,15 +17,14 @@
     display: flex;
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 2rem 0 -2rem;
     justify-content: center;
     gap: 0.5rem;
-    margin: 2rem 0 -2rem;
 }
 
 .page-button {
-    border: 1px solid hsl(0, 0%, 87%);
-    border-radius: 5px;
+    border: 0.0625rem solid hsl(0, 0%, 87%);
+    border-radius: 0.3125rem;
     overflow: hidden;
 }
 

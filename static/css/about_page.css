@@ -1,6 +1,6 @@
 .about-section {
     background-color: var(--color-light-gray);
-    padding: 50px 0;
+    padding: 3.125rem 0;
 }
 
 .about-section img {
@@ -31,8 +31,8 @@
     margin: auto;
 }
 
-@media (max-width: 768px),
-(min-width: 769px) and (max-width: 1180px) {
+@media (max-width: 48rem),
+(min-width: 48.06rem) and (max-width: 73.75rem) {
     .about-section {
         text-align: center;
     }

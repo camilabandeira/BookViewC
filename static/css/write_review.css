@@ -21,7 +21,7 @@
 }
 
 .divider-write-review {
-    border-bottom: 1px solid hsl(0deg 0% 89.35%);
+    border-bottom: 0.0625rem solid hsl(0deg 0% 89.35%);
     width: 7rem;
     margin: auto;
     margin-bottom: 2.5rem;
@@ -46,7 +46,7 @@
     margin-top: 0.3125rem;
     border-radius: 0.25rem;
     outline: none;
-    border: 1px solid hsl(0, 0%, 91%);
+    border: 0.0625rem solid hsl(0, 0%, 91%);
 }
 
 #review-excerpt,
@@ -65,14 +65,13 @@
     width: 100%;
     padding: 0.5rem;
     font-size: 1rem;
-    border: 1px solid hsl(0, 0%, 91%);
+    border: 0.0625rem solid hsl(0, 0%, 91%);
     border-radius: 0.3125rem;
 }
 
 ::placeholder {
     padding: 0;
 }
-
 
 .review-submit-btn {
     background-color: var(--color-dark-charcoal);
@@ -98,7 +97,6 @@
         padding: 0;
     }
 }
-
 
 /* Edit Review */
 .submit-change-btn {

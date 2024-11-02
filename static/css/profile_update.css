@@ -7,15 +7,14 @@
 
 .update-profile-form-container h2 {
     padding: 2rem;
-    line-height: 1px;
+    line-height: 0.0625rem;
     margin-top: 2.3rem;
     font-size: 2.4rem;
     font-weight: 700;
-
 }
 
 .divider-update-profile {
-    border-bottom: 1px solid hsl(0deg 0% 89.35%);
+    border-bottom: 0.0625rem solid hsl(0deg 0% 89.35%);
     width: 7rem;
     margin-bottom: 3rem;
     margin-top: -0.3rem;
@@ -25,7 +24,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
-    width: 430px;
+    width: 26.875rem;
 }
 
 .update-profile-group label {
@@ -36,7 +35,7 @@
 textarea {
     padding: 0.8rem;
     border-radius: 0.5rem;
-    border: 1px solid hsl(0deg 0% 89.35%);
+    border: 0.0625rem solid hsl(0deg 0% 89.35%);
     width: 100%;
 }
 
@@ -54,7 +53,6 @@ textarea {
 .update-profile-submit-btn:hover {
     background-color: hsla(60, 7%, 16%, 0.957);
 }
-
 
 .delete-btn {
     padding: 0.8rem;

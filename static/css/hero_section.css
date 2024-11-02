@@ -35,8 +35,8 @@
     max-width: 100%;
 }
 
-@media (max-width: 768px),
-(min-width: 769px) and (max-width: 1180px) {
+@media (max-width: 48rem),
+(min-width: 48.0625rem) and (max-width: 73.75rem) {
     .hero-title {
         font-size: 2rem;
     }
@@ -49,5 +49,4 @@
         text-align: center;
         padding: 2rem 1rem !important;
     }
-
 }

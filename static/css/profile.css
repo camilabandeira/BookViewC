@@ -1,15 +1,12 @@
-/* Styles for the alert box */
 .alert-dismissible {
     margin-top: 2rem;
     padding-bottom: 0;
 }
 
-
 .alert-container .alert p {
     text-align: center;
 }
 
-/* -- Profile Container Styles -- */
 .profile-container {
     display: flex;
     flex-direction: column;
@@ -18,7 +15,6 @@
     background-color: var(--color-light-gray);
 }
 
-/* -- Profile Wrappers -- */
 .profile-wrapper1,
 .profile-wrapper2,
 .profile-wrapper3 {
@@ -26,11 +22,10 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
 }
 
-/* -- Profile Header -- */
 .profile-header {
     display: flex;
     align-items: center;
@@ -38,7 +33,6 @@
     width: 100%;
 }
 
-/* -- Profile Image -- */
 .profile-img_wrapper {
     position: relative;
     flex-shrink: 0;
@@ -54,7 +48,7 @@
 }
 
 .divider-profile {
-    border-left: 1px solid var(--color-muted-gray);
+    border-left: 0.0625rem solid var(--color-muted-gray);
     padding: 0.3125rem;
     height: 9.4rem;
 }
@@ -88,9 +82,8 @@
     font-weight: 500;
     color: hsl(0, 0%, 21%);
     line-height: 1.3;
-    padding: 10px;
+    padding: 0.625rem;
     background-color: hsl(0, 0%, 94%);
-
 }
 
 .location {
@@ -151,7 +144,7 @@
 .user-posts h2 {
     font-size: 1.5rem;
     font-weight: 700;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 0.0625rem solid #ddd;
     width: 12rem;
     padding-bottom: 0.4rem;
 }
@@ -179,7 +172,7 @@
 .post-date {
     font-size: 0.875rem;
     color: var(--color-muted-gray);
-    margin-left: 10px;
+    margin-left: 0.625rem;
 }
 
 .posts-on {
@@ -200,7 +193,7 @@
     justify-content: flex-end;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 64rem) {
 
     .divider-profile {
         display: none;
@@ -229,11 +222,10 @@
     }
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 35.99875rem) {
 
     .profile-info {
         width: 100%;
-
     }
 
     .profile-wrapper1,

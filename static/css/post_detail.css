@@ -1,5 +1,5 @@
 hr {
-    border-top: 1px solid #e1e1e1;
+    border-top: 0.0625rem solid #e1e1e1;
 }
 
 .post-container {
@@ -13,7 +13,7 @@ hr {
     position: relative;
     top: -3rem;
     left: 8rem;
-    gap: 8px;
+    gap: 0.5rem;
     justify-content: flex-end;
 }
 
@@ -55,15 +55,15 @@ hr {
 }
 
 .author-imgage {
-    border: 5px solid var(--color-muted-gray);
+    border: 0.3125rem solid var(--color-muted-gray);
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 9.375rem;
+    height: 9.375rem;
     object-fit: cover;
 }
 
 .vertical-line {
-    border-left: 1px solid #e7e7e7;
+    border-left: 0.0625rem solid #e7e7e7;
     max-height: 100%;
 }
 
@@ -74,11 +74,10 @@ hr {
 
 .post-detailed-main {
     margin-top: 1rem;
-    margin-left: 50px;
+    margin-left: 3.125rem;
 }
 
 .post-title {
-
     font-weight: 800;
     text-align: center;
 }
@@ -90,10 +89,9 @@ hr {
     font-weight: 300;
 }
 
-
 .post-author a {
     text-transform: capitalize;
-    border-bottom: 1px solid var(--color-bright-blue);
+    border-bottom: 0.0625rem solid var(--color-bright-blue);
     font-weight: 400;
     color: var(--color-bright-blue);
 }
@@ -102,13 +100,12 @@ hr {
     font-size: 1rem;
     line-height: 1.6;
     text-align: justify;
-
 }
 
 .post_border {
-    border-top: 1px solid var(--color-dark-charcoal);
+    border-top: 0.0625rem solid var(--color-dark-charcoal);
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 1.875rem;
     padding-top: 2rem;
     width: 18%;
 }
@@ -132,44 +129,36 @@ hr {
     width: 55%;
 }
 
-
 .comment-author {
-    padding-bottom: 10px;
+    padding-bottom: 0.625rem;
 }
 
 .comment-item,
 .horizontal-separator {
-    border-bottom: 1px solid #e7e7e7;
-}
-
-.comment-author {
-    padding-bottom: 10px;
+    border-bottom: 0.0625rem solid #e7e7e7;
 }
 
 .comment-item {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 5px;
-
+    padding-top: 0.3125rem;
 }
 
 .comment-actions {
     display: flex;
     justify-content: flex-end;
-    gap: 5px;
-    margin-bottom: 10px;
+    gap: 0.3125rem;
+    margin-bottom: 0.625rem;
     font-weight: bold;
     font-size: 0.9rem;
     color: var(--color-dark-charcoal);
     cursor: pointer;
-
 }
 
 .comment-actions:hover {
     text-decoration: underline;
 }
-
 
 .add-comment-container {
     display: flex;
@@ -179,14 +168,13 @@ hr {
 }
 
 .add-comment {
-    margin-bottom: -50px;
-    margin-left: 3px;
+    margin-bottom: -3.125rem;
+    margin-left: 0.1875rem;
 }
 
 .comment-count {
-    margin-bottom: -10px;
+    margin-bottom: -0.625rem;
 }
-
 
 .login-message {
     display: flex;
@@ -207,8 +195,8 @@ hr {
 .post-comment {
     background-color: var(--color-dark-charcoal);
     color: var(--color-neutral-gray);
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.3125rem;
     font-weight: 600;
     width: 35%;
     cursor: pointer;
@@ -219,7 +207,7 @@ hr {
     background-color: var(--color-primary-blue);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
     .post-edit-dlt {
         top: -1rem;
         left: 0;
@@ -235,7 +223,6 @@ hr {
         display: none;
     }
 
-
     .post-container {
         padding: 0;
     }
@@ -250,8 +237,6 @@ hr {
 
     .post-content {
         font-size: 0.9rem;
-        font-size: 1rem;
-
     }
 
     .post-title {
@@ -259,8 +244,8 @@ hr {
     }
 
     .author-imgage {
-        width: 100px;
-        height: 100px;
+        width: 6.25rem;
+        height: 6.25rem;
     }
 
     .post_border {
@@ -307,7 +292,6 @@ hr {
     .login-message {
         margin-top: 1rem;
         text-align: center;
-
     }
 
     .login-message a {
@@ -316,9 +300,7 @@ hr {
     }
 }
 
-
-@media (min-width: 769px) and (max-width: 1180px) {
-
+@media (min-width: 48.0625rem) and (max-width: 73.75rem) {
     .post_detailed-container {
         padding: 0 0.5rem;
         min-width: 100%;
