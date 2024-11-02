@@ -1,0 +1,65 @@
+:root {
+    --color-dark-charcoal: #2B2B25;
+    --color-deep-purple: #1D1141;
+    --color-muted-gray: #888;
+    --color-bright-blue: #546CFF;
+    --color-light-gray: #F9F9F9;
+    --color-neutral-gray: #F5F5F5;
+    --color-off-white: #FCFCFC;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -2.6rem;
+    padding: 4rem;
+    background-color: var(--color-light-gray);
+}
+
+.reviews-container h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.pagination-nav {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 2rem 0 -2rem;
+}
+
+.page-button {
+    border: 1px solid hsl(0, 0%, 87%);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.page-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: var(--color-muted-gray);
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.page-link:hover {
+    background-color: var(--color-off-white);
+    color: var(--color-muted-gray);
+}
+
+.page-button.current-page .page-link {
+    background-color: var(--color-muted-gray);
+    color: var(--color-off-white);
+    cursor: default;
+}
+
+.page-button.inactive .page-link {
+    color: hsl(0, 0%, 67%);
+    pointer-events: none;
+    cursor: not-allowed;
+}
