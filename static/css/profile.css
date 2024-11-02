@@ -53,14 +53,12 @@
     border: 0.0625rem solid #ededed;
 }
 
-/* -- Divider between Profile Image and Info -- */
 .divider-profile {
     border-left: 1px solid var(--color-muted-gray);
     padding: 0.3125rem;
     height: 9.4rem;
 }
 
-/* -- Profile Info Section -- */
 .profile-info {
     display: flex;
     flex-direction: column;
@@ -115,7 +113,6 @@
     margin-bottom: 0.1875rem;
 }
 
-/* -- Edit Button Styling -- */
 .profile-edit {
     position: relative;
     top: -1.8rem;
@@ -147,7 +144,6 @@
     font-size: 1rem;
 }
 
-/* -- User Posts Section -- */
 .user-posts {
     margin-top: 5rem;
 }
@@ -195,7 +191,6 @@
     text-align: center;
 }
 
-/* -- Footer Image -- */
 .profile-wrapper3 {
     width: 100%;
 }
@@ -205,9 +200,6 @@
     justify-content: flex-end;
 }
 
-/* -- Responsive Design -- */
-
-/* -- Medium Devices (Tablets, 768px to 1024px) -- */
 @media (max-width: 1024px) {
 
     .divider-profile {
@@ -237,7 +229,6 @@
     }
 }
 
-/* -- Small Devices (Phones, up to 575.98px) -- */
 @media (max-width: 575.98px) {
 
     .profile-info {
