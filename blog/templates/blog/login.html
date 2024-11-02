@@ -13,7 +13,7 @@
             <div class="alert {{ message.tags }}">{{ message }}</div>
         {% endfor %}
     </div>
-{% endif %}
+    {% endif %}
 
     <div class="login-form">
         <h2>Welcome back! 👋</h2>
@@ -21,11 +21,11 @@
         <form method="post">
             {% csrf_token %}
             <div class="input-login-group">
-                <label for="email">Your email or username</label>
+                <label for="{{ form.username.id_for_label }}">Your email or username</label>
                 {{ form.username }} 
             </div>
             <div class="input-login-group">
-                <label for="password">Password</label>
+                <label for="{{ form.password.id_for_label }}">Password</label>
                 {{ form.password }}  
             </div>
             <button type="submit" class="login-btn">Continue</button>
