@@ -104,7 +104,7 @@ def profile_view(request, username=None):
     }
     return render(request, 'blog/profile.html', context)
 
-@login_required
+@login_required(login_url='/login/')
 def profile_update(request):
     try:
         user_form = UserUpdateForm(request.POST or None, instance=request.user)
@@ -152,7 +152,7 @@ def write_review(request):
     return render(request, 'blog/write_review.html', {'form': form})
 
 # Edit Post View
-@login_required
+@login_required(login_url='/login/')
 def edit_post(request, slug):
     post = get_object_or_404(Post, slug=slug, author=request.user)
     if request.method == 'POST':
@@ -166,7 +166,7 @@ def edit_post(request, slug):
     return render(request, 'blog/edit_post.html', {'form': form, 'post': post})
 
 # Delete Post View
-@login_required
+@login_required(login_url='/login/')
 def delete_post(request, slug):
     post = get_object_or_404(Post, slug=slug, author=request.user)
     if request.method == 'POST':
