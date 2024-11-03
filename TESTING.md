@@ -46,3 +46,12 @@ The JavaScript code has been validated using [JSHint](https://jshint.com/) to en
 
 ![JavaScript validation results using JSHint](https://github.com/user-attachments/assets/f00acdda-b8fb-47a7-8104-7bf514e7013b)
 
+
+## Python Validation
+
+## Python Validation
+
+All Python code has been validated using [PEP8CI](https://pep8ci.herokuapp.com/), a Python linter from Code Institute, to ensure compliance with PEP8 standards.
+
+
+
