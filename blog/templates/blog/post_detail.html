@@ -6,19 +6,22 @@
 {% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/post_detail.css' %}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{% static 'css/post_detail.css' %}"></noscript>
+
+<link rel="preconnect" href="https://res.cloudinary.com">
 
 <div class="container-fluid post-container">
-
     <div class="row cover_image-container">
         <div class="col-12">
-            <img src="{{ post.get_post_image }}" alt="Cover Image" class="post-cover-image">
+            <img src="{{ post.get_post_image }}" alt="Cover Image" class="post-cover-image" loading="lazy" width="800" height="400">
         </div>
     </div>
 
     <div class="row mt-4 post_detailed-container text-center">
         <div class="col-md-1">
-            <img src="{% if post.author.profile.profile_picture %}{{ post.author.profile.profile_picture.url }}{% else %}{% static 'images/profile_image_default.jpeg' %}{% endif %}" alt="Author Image" class="author-imgage">
+            <img src="{% if post.author.profile.profile_picture %}{{ post.author.profile.profile_picture.url }}?q_auto,f_auto{% else %}{% static 'images/profile_image_default.jpeg' %}{% endif %}" 
+                 alt="Author Image" class="author-imgage" loading="lazy" width="80" height="80">
         </div>
 
         <div class="col-md-9 mx-auto d-flex">
@@ -27,12 +30,11 @@
             </div>
             <div class="post-detailed-main">
                 {% if user == post.author %}
-                <!-- Edit and Delete Buttons -->
                 <div class="post-edit-dlt">
                     <a href="{% url 'edit_post' post.slug %}" class="review-edit-btn"><i class="bi bi-pencil-square"></i></a>
                     <a href="{% url 'delete_post' post.slug %}" class="review-dlt-btn"><i class="bi bi-trash-fill"></i></a>
                 </div>
-            {% endif %}
+                {% endif %}
                 <h1 class="post-title">{{ post.title }}</h1>
                 <p class="post-author">
                     by <a href="{% url 'profile' post.author.username %}">{{ post.author.username }}</a>

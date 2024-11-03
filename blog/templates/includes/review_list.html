@@ -1,30 +1,28 @@
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'css/review_list.css' %}">
+<link rel="stylesheet" href="{% static 'css/review_list.css' %}" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="{% static 'css/review_list.css' %}"></noscript>
 
-
-
-    <div class="review_card-wrapper"> 
-        {% for post in posts %}
-        <div class="review-card">
-                <img src="{% if post.get_post_image %}{{ post.get_post_image }}{% else %}{% static 'images/default_image_post.webp' %}{% endif %}" 
-                     class="card-img-top" alt="Review Image">
-                <div class="card-body">
-                    <div class="card_title">
-                        <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
-                    </div>
-                        <small>Published by {{ post.author }} on {{ post.created_on|date:"M d, Y" }}</small>
-
-                    <p class="review-content">
-                        {{ post.excerpt|default_if_none:"No excerpt available" |truncatewords:30 }}
-                    </p>
-                    <div class="full_post-btn">
-                        <a href="{% url 'post_detail' post.slug %}" class="read_full-post">Read full post</a>
-                    </div>
-                </div>
+<div class="review_card-wrapper"> 
+    {% for post in posts %}
+    <div class="review-card">
+        <img src="{% if post.get_post_image %}{{ post.get_post_image }}{% else %}{% static 'images/default_image_post.webp' %}{% endif %}?q_auto,f_auto" 
+             class="card-img-top" alt="Review Image" loading="lazy" width="400" height="300">
+        <div class="card-body">
+            <div class="card_title">
+                <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
             </div>
-        {% empty %}
-        <p>No reviews available at the moment.</p>
-        {% endfor %}
+            <small>Published by {{ post.author }} on {{ post.created_on|date:"M d, Y" }}</small>
 
+            <p class="review-content">
+                {{ post.excerpt|default_if_none:"No excerpt available" |truncatewords:30 }}
+            </p>
+            <div class="full_post-btn">
+                <a href="{% url 'post_detail' post.slug %}" class="read_full-post">Read full post</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>No reviews available at the moment.</p>
+    {% endfor %}
 </div>

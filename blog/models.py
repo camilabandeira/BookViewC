@@ -33,8 +33,9 @@ class Post(models.Model):
         return self.title
 
     def get_post_image(self):
-        return self.cover_image.url if self.cover_image else static(
-            'images/default_image_post.png'
+        return (
+            f"{self.cover_image.url}?q_auto,f_auto" if self.cover_image
+            else static('images/default_image_post.png')
         )
 
 
