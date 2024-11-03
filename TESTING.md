@@ -1,7 +1,9 @@
+# BookView Validation
 
-# HTML Validation 
+This document serves as a repository for validation tests across different aspects of BookView, a community-driven site where book lovers can share and read book reviews. Each test ensures compliance with standards to enhance platform accessibility, compatibility, and performance.
 
-This section outlines the process of validating HTML for the [BookView Blog Platform](https://bookviewc-7148162b5406.herokuapp.com/) using the [W3C HTML Validator](https://validator.w3.org/).
+
+## HTML Validation
 
 - [Homepage](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2F) - pass
 - [Reviews Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Freviews%2F) - pass
