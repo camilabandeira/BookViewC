@@ -24,13 +24,16 @@
 </head>
 
 <body>
-    <header>
+    <header role="banner">
+        <!-- Skip to main content link -->
+        <a href="#mainContent" class="visually-hidden-focusable">Skip to main content</a>
+
         <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
             <div class="container d-flex gap-3">
                 <a class="navbar-title mx-lg-0" href="{% url 'homepage' %}">BOOKVIEW</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle site navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -48,7 +51,7 @@
                         <li class="nav-item d-lg-none">
                             <a href="{% url 'profile' user.username %}">
                                 <img src="{% if user.profile.profile_picture %}{{ user.profile.profile_picture.url }}{% else %}{% static 'images/profile_image_default.jpeg' %}{% endif %}" 
-                                     alt="Profile Picture" class="profile-pic">
+                                     alt="Profile Picture" class="profile-pic" aria-label="User Profile Picture">
                             </a>
                         </li>
                         <li class="nav-item d-lg-none">
@@ -69,9 +72,10 @@
                 
                      <!-- Search Form -->
                     <form class="d-flex justify-content-center w-100 mt-3 mt-lg-0 ms-lg-auto" role="search" method="GET" action="{% url 'search_posts' %}">
-                        <input class="form-control me-2 search-box" type="search" placeholder="Search..." aria-label="Search" name="q" value="{{ request.GET.q|default_if_none:'' }}">
-                        <button class="search_btn" type="submit">
-                            <i class="bi bi-search"></i>
+                        <label for="search" class="visually-hidden">Search</label>
+                        <input id="search" class="form-control me-2 search-box" type="search" placeholder="Search..." aria-label="Search" name="q" value="{{ request.GET.q|default_if_none:'' }}">
+                        <button class="search_btn" type="submit" aria-label="Search Button">
+                            <i class="bi bi-search" aria-hidden="true"></i>
                          </button>
                     </form>
 
@@ -94,7 +98,7 @@
                         <li class="nav-item d-flex align-items-center me-3">
                             <a href="{% url 'profile' user.username %}">
                                 <img src="{% if user.profile.profile_picture %}{{ user.profile.profile_picture.url }}{% else %}{% static 'images/profile_image_default.jpeg' %}{% endif %}" 
-                                     alt="Profile Picture" class="profile-pic">
+                                     alt="Profile Picture" class="profile-pic" aria-label="User Profile Picture">
                             </a>
                         </li>                   
                         {% endif %}
@@ -104,12 +108,12 @@
         </nav>
     </header>
 
-    <main>
+    <main id="mainContent" role="main">
         {% block content %}
         {% endblock %}
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <p>© 2024 BookView. All rights reserved. Created by <strong>Camila Bandeira</strong>.</p>
     </footer>
 
