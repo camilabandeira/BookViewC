@@ -11,5 +11,6 @@ This document serves as a repository for validation tests across different aspec
 - [Search Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fsearch%2F%3Fq%3Dharry) - pass
 - [Sig-up Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fsignup%2F) - pass
 - [Login Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Flogin%2F) - pass
+- [Profile Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fprofile%2Fbookview) - pass
 - [Post Detail Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fpost%2Fharry-potter-and-the-deathly-hallows-by-jk-rowling%2F) - pass
 - [Write a Review Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Flogin%2F%3Fnext%3D%2Fwrite-review%2F) - pass
