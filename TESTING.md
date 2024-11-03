@@ -38,3 +38,11 @@ All CSS files have been validated using the [W3C CSS Validator](https://jigsaw.w
 - [Update Post Page](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fpost%2Fharry-potter-and-the-philosophers-stone%2Fedit%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - pass
 - [Delete Post Page](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fpost%2Fharry-potter-and-the-philosophers-stone%2Fdelete%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - pass
 - [Delete Account](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Faccount%2Fdelete%2F%3F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - pass
+
+
+## JavaScript Validation
+
+The JavaScript code has been validated using [JSHint](https://jshint.com/) to ensure it follows best practices and standards.
+
+![JavaScript validation results using JSHint](https://github.com/user-attachments/assets/f00acdda-b8fb-47a7-8104-7bf514e7013b)
+
