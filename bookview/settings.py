@@ -34,7 +34,11 @@ DEBUG = False
 SECRET_KEY = config('SECRET_KEY')
 
 # Hosts allowed to access the application
-ALLOWED_HOSTS = ['bookviewc-7148162b5406.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'bookviewc-7148162b5406.herokuapp.com',
+    'localhost',
+    '127.0.0.1',
+]
 
 # Add the domains you want to trust for CSRF
 CSRF_TRUSTED_ORIGINS = [
@@ -99,18 +103,31 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'UserAttributeSimilarityValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'MinimumLengthValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'CommonPasswordValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'NumericPasswordValidator'
+        ),
     },
 ]
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
