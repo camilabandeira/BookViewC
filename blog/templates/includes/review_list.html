@@ -7,7 +7,7 @@
     <div class="review_card-wrapper"> 
         {% for post in posts %}
         <div class="review-card">
-                <img src="{% if post.get_post_image %}{{ post.get_post_image }}{% else %}{% static 'images/default_image_post.svg' %}{% endif %}" 
+                <img src="{% if post.get_post_image %}{{ post.get_post_image }}{% else %}{% static 'images/default_image_post.webp' %}{% endif %}" 
                      class="card-img-top" alt="Review Image">
                 <div class="card-body">
                     <div class="card_title">
