@@ -10,8 +10,6 @@
 
 ## Table of Contents
 
-## Table of Contents
-
 - [User Experience (UX)](#user-experience-ux)
   - [User Stories](#user-stories)
   - [Goals](#goals)
