@@ -122,7 +122,7 @@ def profile_update(request):
     }
     return render(request, 'blog/profile_update.html', context)
 
-@login_required
+@login_required(login_url='/login/')
 def write_review(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
