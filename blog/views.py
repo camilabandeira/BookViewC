@@ -45,6 +45,9 @@ def reviews_page(request):
 
 # Authentication Views
 def signup(request):
+    if request.user.is_authenticated:
+        return redirect('homepage')  
+
     if request.method == 'POST':
         form = SignupForm(request.POST)
         if form.is_valid():
