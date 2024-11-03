@@ -49,8 +49,6 @@ The JavaScript code has been validated using [JSHint](https://jshint.com/) to en
 
 ## Python Validation
 
-## Python Validation
-
 All Python code has been validated using [PEP8CI](https://pep8ci.herokuapp.com/), a Python linter from Code Institute, to ensure compliance with PEP8 standards.
 
 
