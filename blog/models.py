@@ -5,7 +5,7 @@ from django.templatetags.static import static
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-# Create your models here.
+
 CATEGORY_CHOICES = (
     ('fiction', 'Fiction'),
     ('non_fiction', 'Non-Fiction'),
@@ -17,6 +17,7 @@ CATEGORY_CHOICES = (
     ('romance', 'Romance'),
     ('others', 'Others'),
 )
+
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
@@ -32,10 +33,17 @@ class Post(models.Model):
         return self.title
 
     def get_post_image(self):
-        return self.cover_image.url if self.cover_image else static('images/default_image_post.png')
+        return self.cover_image.url if self.cover_image else static(
+            'images/default_image_post.png'
+        )
+
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
+    post = models.ForeignKey(
+        Post,
+        related_name="comments",
+        on_delete=models.CASCADE
+    )
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -54,10 +62,12 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username}\'s Profile'
 
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
+
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
