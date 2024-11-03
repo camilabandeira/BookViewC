@@ -6,7 +6,6 @@ from django_summernote.widgets import SummernoteWidget
 from .models import Comment, Profile, Post
 
 
-
 class SignupForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)
     password_confirmation = forms.CharField(widget=forms.PasswordInput)
@@ -24,10 +23,11 @@ class SignupForm(forms.ModelForm):
             raise forms.ValidationError("Passwords do not match")
         return cleaned_data
 
+
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'excerpt', 'content', 'category', 'cover_image'] 
+        fields = ['title', 'excerpt', 'content', 'category', 'cover_image']
         widgets = {
             'content': SummernoteWidget(attrs={
                 'summernote': {
@@ -44,6 +44,7 @@ class PostForm(forms.ModelForm):
             }),
         }
 
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
@@ -56,8 +57,12 @@ class CommentForm(forms.ModelForm):
             }),
         }
 
+
 class LoginForm(AuthenticationForm):
-    username = forms.CharField(label="Username or Email", widget=forms.TextInput(attrs={'autofocus': True}))
+    username = forms.CharField(
+        label="Username or Email",
+        widget=forms.TextInput(attrs={'autofocus': True})
+    )
 
     def clean(self):
         username_or_email = self.cleaned_data.get('username')
@@ -69,28 +74,42 @@ class LoginForm(AuthenticationForm):
         except User.DoesNotExist:
             username = username_or_email
 
-        self.user_cache = authenticate(self.request, username=username, password=password)
+        self.user_cache = authenticate(
+            self.request,
+            username=username,
+            password=password,
+        )
         if self.user_cache is None:
             raise forms.ValidationError(
                 self.error_messages['invalid_login'],
                 code='invalid_login',
-                params={'username': self.username_field.verbose_name},
+                params={
+                    'username': self.username_field.verbose_name,
+                },
             )
 
         return self.cleaned_data
-        
+
+
 class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username', 'email']
 
+
 class ProfileUpdateForm(forms.ModelForm):
     profile_picture = forms.ImageField(
         required=False,
-        widget=forms.FileInput(attrs={'class': 'update-profile-input'})
+        widget=forms.FileInput(
+            attrs={'class': 'update-profile-input'}
+        )
     )
-    bio = forms.CharField(widget=forms.Textarea(attrs={'maxlength': '150'}), required=False)
-    
+    bio = forms.CharField(
+        widget=forms.Textarea(
+            attrs={'maxlength': '150'}
+        ),
+        required=False
+    )
 
     class Meta:
         model = Profile
@@ -98,8 +117,14 @@ class ProfileUpdateForm(forms.ModelForm):
 
 
 class DeleteAccountForm(forms.Form):
-    confirm = forms.BooleanField(label="I confirm that I want to delete my account.")
+    confirm = forms.BooleanField(
+        label="I confirm that I want to delete my account."
+    )
 
 
 class SearchForm(forms.Form):
-    query = forms.CharField(label="Search", max_length=100, required=False)
+    query = forms.CharField(
+        label="Search",
+        max_length=100,
+        required=False
+    )
