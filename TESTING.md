@@ -51,5 +51,25 @@ The JavaScript code has been validated using [JSHint](https://jshint.com/) to en
 
 All Python code has been validated using [PEP8CI](https://pep8ci.herokuapp.com/), a Python linter from Code Institute, to ensure compliance with PEP8 standards.
 
+- **bookview/settings.py** - pass
+![Screenshot of Settings Validation](https://github.com/user-attachments/assets/2fabf82b-b57c-4de5-b56a-91895344176b)
+
+- **bookview/urls.py** - pass
+![Screenshot of URLs Validation](https://github.com/user-attachments/assets/83e5f950-25d3-4a1e-b4c5-7c6ca5930940)
+
+- **blog/admin.py** - pass
+![image](https://github.com/user-attachments/assets/c3fe99e7-60ae-4117-b8b7-0aa63fc2308f)
+
+- **blog/forms.py** - pass
+![image](https://github.com/user-attachments/assets/acc537a9-5811-447b-8a94-c9edfc424cfa)
+
+- **blog/models.py** - pass
+![image](https://github.com/user-attachments/assets/77809cd1-e2da-45d1-bfe5-4b8034f5f600)
+
+- **blog/urls.py** - pass
+![image](https://github.com/user-attachments/assets/dd103b45-d4c3-4094-83dc-6d409a67813d)
+
+- **blog/views.py** - pass
+![image](https://github.com/user-attachments/assets/14dfcda5-b6e6-4587-840a-7b318098a2ca)
 
 
