@@ -56,7 +56,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'django_summernote',
+    'cloudinary',
     'blog',
 ]
 
@@ -166,6 +168,8 @@ CLOUDINARY_STORAGE = {
     'API_KEY': env('CLOUDINARY_API_KEY', default=None),
     'API_SECRET': env('CLOUDINARY_API_SECRET', default=None),
 }
+
+CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
