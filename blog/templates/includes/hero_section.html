@@ -1,5 +1,7 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/hero_section.css' %}">
+<link rel="preload" href="{% static 'images/hero_section_image.webp' %}" as="image" type="image/webp">
+
 
 <section class="container-fluid hero-section">
     <div class="row align-items-center">
@@ -13,7 +15,13 @@
         </div>
 
         <div class="col-lg-6 text-center">
-            <img src="{% static 'images/hero_section_image.webp' %}" alt="Hero Illustration" class="hero-image">
+            <img 
+            srcset="{% static 'images/hero_section_image_400.webp' %} 400w,
+                    {% static 'images/hero_section_image_800.webp' %} 800w,
+                    {% static 'images/hero_section_image_1200.webp' %} 1200w"
+            sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
+            src="{% static 'images/hero_section_image.webp' %}" 
+            alt="Hero Illustration" class="hero-image">          
         </div>
     </div>
 </section>

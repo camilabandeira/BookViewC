@@ -6,13 +6,18 @@
 <div class="review_card-wrapper"> 
     {% for post in posts %}
     <div class="review-card">
-        <img src="{% if post.get_post_image %}{{ post.get_post_image }}{% else %}{% static 'images/default_image_post.webp' %}{% endif %}?q_auto,f_auto" 
-             class="card-img-top" alt="Review Image" loading="lazy" width="400" height="300">
+        <img 
+        src="{% if post.get_post_image %}{{ post.get_post_image }}{% else %}{% static 'images/default_image_post.webp' %}{% endif %}" 
+        srcset="{% if post.get_post_image %}{{ post.get_post_image }}{% else %}{% static 'images/default_image_post.webp' %}{% endif %} 400w,
+                {% if post.get_post_image %}{{ post.get_post_image }}{% else %}{% static 'images/default_image_post.webp' %}{% endif %} 800w"
+        sizes="(max-width: 600px) 100vw, 400px"
+        class="card-img-top" alt="Review Image" loading="lazy">
+    
         <div class="card-body">
             <div class="card_title">
                 <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
             </div>
-            <small>Published by {{ post.author }} on {{ post.created_on|date:"M d, Y" }}</small>
+            <div class="small-author">Published by {{ post.author }} on {{ post.created_on|date:"M d, Y" }}</div>
 
             <p class="review-content">
                 {{ post.excerpt|default_if_none:"No excerpt available" |truncatewords:30 }}

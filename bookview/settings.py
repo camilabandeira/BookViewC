@@ -95,7 +95,10 @@ WSGI_APPLICATION = 'bookview.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=config('DATABASE_URL'))
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL'),
+        conn_max_age=0  # Close connections immediately after each request
+    )
 }
 
 # Password validation
