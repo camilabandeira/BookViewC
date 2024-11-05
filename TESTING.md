@@ -71,3 +71,16 @@ All Python code has been validated using [PEP8CI](https://pep8ci.herokuapp.com/)
 
 - **blog/views.py** - pass  
 ![Views.py Validation Screenshot](https://github.com/user-attachments/assets/14dfcda5-b6e6-4587-840a-7b318098a2ca)
+
+
+| **Feature**                | **Test Case**                             | **Google Chrome** | **Mozilla Firefox** | **Safari**         | **Microsoft Edge** | **Outcome**                                                                                                                 |
+|----------------------------|-------------------------------------------|-------------------|---------------------|---------------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| **View Book Reviews**      | Access and read the latest book reviews   | ✔️                | ✔️                  | ✔️                  | ✔️                  | Successfully redirects to the detailed view of the selected book review on all tested browsers.                            |
+| **Search for Book Reviews**| Search for a specific book review         | ✔️                | ✔️                  | ✔️                  | ✔️                  | Displays relevant reviews with excerpts and "Read full post" links on all tested browsers.                                 |
+| **User Registration**      | Register a new user                       | ✔️                | ✔️                  | ✔️                  | ✔️                  | User is registered, logged in, and redirected to the homepage across all tested browsers.                                  |
+| **User Login**             | Log in with an existing account           | ✔️                | ✔️                  | ✔️                  | ✔️                  | User is logged in and redirected correctly on all tested browsers.                                                         |
+| **Write a Review**         | Submit a new book review                  | ✔️                | ✔️                  | ✔️                  | ✔️                  | The review is saved and appears in the homepage review list across all tested browsers.                                    |
+| **User Logout**            | Log out of the application                | ✔️                | ✔️                  | ✔️                  | ✔️                  | User is logged out and redirected to the login page in all tested browsers.                                                |
+| **Edit Profile**           | Update profile information                | ✔️                | ✔️                  | ✔️                  | ✔️                  | Profile updates are saved and visible on the user’s profile page in all tested browsers.                                   |
+| **Comment on a Review**    | Add a comment to a book review            | ✔️                | ✔️                  | ✔️                  | ✔️                  | The comment appears under the review with the user’s name and comment text on all tested browsers.                         |
+
