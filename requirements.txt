@@ -2,7 +2,7 @@ asgiref==3.8.1
 bleach==6.1.0
 bootstrap4==0.1.0
 cachetools==5.3.3
-certifi==2024.2.2
+certifi>=2024.07.04
 charset-normalizer==3.3.2
 cloudinary==1.41.0
 colorama==0.4.6
