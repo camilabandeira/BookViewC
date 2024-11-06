@@ -29,8 +29,8 @@
             <label for="review-title">Title</label>
             <input type="text" id="review-title" name="title" value="{{ form.title.value|default_if_none:'' }}" required>
 
-            <label for="review-post-image">Post Image</label>
-            <input type="file" id="review-post-image" name="post_image">
+            <label for="review-post-image">Cover Image</label>
+            <input type="file" id="review-post-image" name="cover_image">
 
             <label for="review-excerpt">Excerpt</label>
             <textarea id="review-excerpt" name="excerpt" rows="3" placeholder="Please write a short description for your post...">{{ form.excerpt.value|default_if_none:'' }}</textarea>
