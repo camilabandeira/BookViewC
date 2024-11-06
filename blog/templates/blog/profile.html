@@ -23,7 +23,7 @@
 
             <div class="profile-img_wrapper">
                 <img src="{% if user_profile.profile.profile_picture %}{{ user_profile.profile.profile_picture.url }}{% else %}{% static 'images/profile_image_default.jpeg' %}{% endif %}" 
-                     alt="Profile picture" class="profile-image">
+                     alt="Profile picture" class="profile-image"  loading="lazy">
             </div>
 
             <div class="divider-profile"></div>
