@@ -4,15 +4,23 @@
 <noscript><link rel="stylesheet" href="{% static 'css/review_list.css' %}"></noscript>
 
 <div class="review_card-wrapper"> 
+    
     {% for post in posts %}
     <div class="review-card">
+        {% if post.cover_image %}
         <img 
-        src="{% if post.get_post_image %}{{ post.get_post_image }}{% else %}{% static 'images/default_image_post.webp' %}{% endif %}" 
-        srcset="{% if post.get_post_image %}{{ post.get_post_image }}{% else %}{% static 'images/default_image_post.webp' %}{% endif %} 400w,
-                {% if post.get_post_image %}{{ post.get_post_image }}{% else %}{% static 'images/default_image_post.webp' %}{% endif %} 800w"
-        sizes="(max-width: 600px) 100vw, 400px"
-        class="card-img-top" alt="Review Image" loading="lazy">
-    
+            src="{{ post.get_post_image }}" 
+            srcset="{{ post.get_post_image }} 400w, {{ post.get_post_image }} 800w"
+            sizes="(max-width: 600px) 100vw, 400px"
+            class="card-img-top" alt="Review Image" loading="lazy">
+    {% else %}
+        <img 
+            src="{% static 'images/default_image_post.webp' %}" 
+            srcset="{% static 'images/default_image_post.webp' %} 400w, {% static 'images/default_image_post.webp' %} 800w"
+            sizes="(max-width: 600px) 100vw, 400px"
+            class="card-img-top" alt="Default Review Image" loading="lazy">
+    {% endif %}
+
         <div class="card-body">
             <div class="card_title">
                 <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
