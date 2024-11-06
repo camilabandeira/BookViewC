@@ -72,6 +72,33 @@ All Python code has been validated using [PEP8CI](https://pep8ci.herokuapp.com/)
 - **blog/views.py** - pass  
 ![Views.py Validation Screenshot](https://github.com/user-attachments/assets/14dfcda5-b6e6-4587-840a-7b318098a2ca)
 
+
+## LightHouse Testing 
+- Homepage 
+
+  - Desktop
+
+   ![image](https://github.com/user-attachments/assets/8bd6d73b-9109-4311-bc59-d21369e6280b)
+
+  - Mobile
+
+    ![image](https://github.com/user-attachments/assets/3ef3d794-db47-4e96-a555-6954dd9582fb)
+
+
+- About Page 
+
+   - Desktop
+
+    ![image](https://github.com/user-attachments/assets/b6398176-7d4d-4a57-bb6e-42cd9965d4f1)
+
+   - Mobile
+
+    ![image](https://github.com/user-attachments/assets/00514dca-4810-4d5e-a14a-f5c23744a305)
+
+
+
+
+
 ## Browsers
 
 | **Feature**                | **Test Case**                             | **Google Chrome** | **Mozilla Firefox** | **Safari**         | **Microsoft Edge** | **Outcome**                                                                                                                 |
