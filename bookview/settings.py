@@ -168,7 +168,6 @@ CLOUDINARY_STORAGE = {
     'API_KEY': env('CLOUDINARY_API_KEY', default=None),
     'API_SECRET': env('CLOUDINARY_API_SECRET', default=None),
 }
-
 CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 
 # Default primary key field type
