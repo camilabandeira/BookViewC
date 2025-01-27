@@ -132,8 +132,10 @@ I use Agile methodology with a Kanban board to visually track progress. Each use
 
 To prioritize, I apply the MoSCoW method (Must-Have, Should-Have, Could-Have, Won’t-Have), ensuring critical features are done first. Each story also has clear Acceptance Criteria to confirm when it's complete and functioning correctly.
 
-![Agile User Stories Screenshot](https://github.com/user-attachments/assets/67a37df2-c2a1-4fd4-8fcf-b7fb326ec0ab)
-![MoSCoW Prioritization Screenshot](https://github.com/user-attachments/assets/a245feb7-5093-4dde-8dd1-32c3d3b39dce)
+- [BookView Project](https://github.com/users/camilabandeira/projects/8)
+
+    ![Agile User Stories Screenshot](https://github.com/user-attachments/assets/67a37df2-c2a1-4fd4-8fcf-b7fb326ec0ab)
+    ![MoSCoW Prioritization Screenshot](https://github.com/user-attachments/assets/a245feb7-5093-4dde-8dd1-32c3d3b39dce)
 
 
 ## Features
