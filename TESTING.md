@@ -34,7 +34,7 @@ All CSS files have been validated using the [W3C CSS Validator](https://jigsaw.w
 - [Profile Page](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fprofile%2Fbookview&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - pass
 - [Update Profile Page](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fprofile%2Fupdate&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - pass
 - [Write a Review Page](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fwrite-review&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - pass
-- [Post Detail Page](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fpost%2Fharry-potter-and-the-deathly-hallows-by-jk-rowling%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - pass
+- [Post Detail Page](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fpost%2Fharry-potter-and-the-chamber-of-secrets%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - pass
 - [Update Post Page](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fpost%2Fharry-potter-and-the-philosophers-stone%2Fedit%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - pass
 - [Delete Post Page](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fpost%2Fharry-potter-and-the-philosophers-stone%2Fdelete%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - pass
 - [Delete Account](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Faccount%2Fdelete%2F%3F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - pass
@@ -44,8 +44,8 @@ All CSS files have been validated using the [W3C CSS Validator](https://jigsaw.w
 
 The JavaScript code has been validated using [JSHint](https://jshint.com/) to ensure it follows best practices and standards.
 
-![JavaScript validation results using JSHint](https://github.com/user-attachments/assets/f00acdda-b8fb-47a7-8104-7bf514e7013b)
-
+- [Post Detail Page](https://github.com/user-attachments/assets/94adae14-daab-438a-b17e-5948909e609b)
+- [Sign-up Page](https://github.com/user-attachments/assets/3dbe4e64-6656-468f-8dcf-f045b750928c)
 
 ## Python Validation
 
