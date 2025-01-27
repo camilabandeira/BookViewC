@@ -16,7 +16,7 @@ All pages have been validated using the [W3C HTML Validator](https://validator.w
 - [Profile Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fprofile%2Fbookview) - pass
 - [Update Profile Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fprofile%2Fupdate%2F) - pass
 - [Write a Review Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Flogin%2F%3Fnext%3D%2Fwrite-review%2F) - pass
-- [Post Detail Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fpost%2Fharry-potter-and-the-deathly-hallows-by-jk-rowling%2F) - pass
+- [Post Detail Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fpost%2Fharry-potter-and-the-chamber-of-secrets%2F) - pass
 - [Update Post Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fpost%2Fharry-potter-and-the-philosophers-stone%2Fedit%2F) - pass
 - [Delete Post Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Fpost%2Fharry-potter-and-the-philosophers-stone%2Fdelete%2F) - pass
 - [Delete Account](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookviewc-7148162b5406.herokuapp.com%2Faccount%2Fdelete%2F%3F) - pass
