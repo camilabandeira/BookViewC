@@ -4,6 +4,7 @@ from cloudinary.models import CloudinaryField
 from django.templatetags.static import static
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from urllib.parse import urlparse, urlunparse 
 
 
 CATEGORY_CHOICES = (
@@ -33,10 +34,12 @@ class Post(models.Model):
         return self.title
 
     def get_post_image(self):
-        return (
-            f"{self.cover_image.url}?q_auto,f_auto" if self.cover_image
-            else static('images/default_image_post.png')
-        )
+        if self.cover_image:
+            url = self.cover_image.url
+            parsed_url = urlparse(url)
+            secure_url = urlunparse(('https',) + parsed_url[1:])
+            return f"{secure_url}?q_auto,f_auto"
+        return static('images/default_image_post.png')
 
 
 class Comment(models.Model):
