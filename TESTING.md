@@ -51,51 +51,70 @@ The JavaScript code has been validated using [JSHint](https://jshint.com/) to en
 
 All Python code has been validated using [PEP8CI](https://pep8ci.herokuapp.com/), a Python linter from Code Institute, to ensure compliance with PEP8 standards.
 
-- **bookview/settings.py** - pass  
-![Settings.py Validation Screenshot](https://github.com/user-attachments/assets/2fabf82b-b57c-4de5-b56a-91895344176b)
-
-- **bookview/urls.py** - pass  
-![URLs.py Validation Screenshot](https://github.com/user-attachments/assets/83e5f950-25d3-4a1e-b4c5-7c6ca5930940)
-
-- **blog/admin.py** - pass  
-![Admin.py Validation Screenshot](https://github.com/user-attachments/assets/c3fe99e7-60ae-4117-b8b7-0aa63fc2308f)
-
-- **blog/forms.py** - pass  
-![Forms.py Validation Screenshot](https://github.com/user-attachments/assets/acc537a9-5811-447b-8a94-c9edfc424cfa)
-
-- **blog/models.py** - pass  
-![Models.py Validation Screenshot](https://github.com/user-attachments/assets/77809cd1-e2da-45d1-bfe5-4b8034f5f600)
-
-- **blog/urls.py** - pass  
-![Blog URLs.py Validation Screenshot](https://github.com/user-attachments/assets/dd103b45-d4c3-4094-83dc-6d409a67813d)
-
-- **blog/views.py** - pass  
-![Views.py Validation Screenshot](https://github.com/user-attachments/assets/14dfcda5-b6e6-4587-840a-7b318098a2ca)
+- **[manage.py](https://github.com/user-attachments/assets/c5755981-e747-42c9-a5db-e3c8c175cd15)** - pass  
+- **[bookview/settings.py](https://github.com/user-attachments/assets/2fabf82b-b57c-4de5-b56a-91895344176b)** - pass  
+- **[bookview/urls.py](https://github.com/user-attachments/assets/83e5f950-25d3-4a1e-b4c5-7c6ca5930940)** - pass  
+- **[blog/admin.py](https://github.com/user-attachments/assets/c3fe99e7-60ae-4117-b8b7-0aa63fc2308f)** - pass  
+- **[blog/apps.py](https://github.com/user-attachments/assets/d33efebb-e97e-434a-9ff9-f81b39985b0b)** - pass  
+- **[blog/forms.py](https://github.com/user-attachments/assets/acc537a9-5811-447b-8a94-c9edfc424cfa)** - pass  
+- **[blog/models.py](https://github.com/user-attachments/assets/77809cd1-e2da-45d1-bfe5-4b8034f5f600)** - pass  
+- **[blog/urls.py](https://github.com/user-attachments/assets/dd103b45-d4c3-4094-83dc-6d409a67813d)** - pass  
+- **[blog/views.py](https://github.com/user-attachments/assets/de8c99c9-2ef8-4a71-849e-4055f847e568)** - pass
 
 
-## LightHouse Testing 
-- Homepage 
+## LightHouse Testing
 
-  - Desktop
+- **Homepage**
+  - [Desktop](https://github.com/user-attachments/assets/8bd6d73b-9109-4311-bc59-d21369e6280b)
+  - [Mobile](https://github.com/user-attachments/assets/3ef3d794-db47-4e96-a555-6954dd9582fb)
 
-   ![image](https://github.com/user-attachments/assets/8bd6d73b-9109-4311-bc59-d21369e6280b)
+- **Reviews Page**
+  - [Desktop](https://github.com/user-attachments/assets/86b4d8ef-50d2-4892-b700-6e51b0c43892)
+  - [Mobile](https://github.com/user-attachments/assets/7826d812-a599-4cf1-9b84-6ffe91d0efea)
 
-  - Mobile
+- **About Page**
+  - [Desktop](https://github.com/user-attachments/assets/b6398176-7d4d-4a57-bb6e-42cd9965d4f1)
+  - [Mobile](https://github.com/user-attachments/assets/00514dca-4810-4d5e-a14a-f5c23744a305)
 
-    ![image](https://github.com/user-attachments/assets/3ef3d794-db47-4e96-a555-6954dd9582fb)
+- **Search Page**
+  - [Desktop](https://github.com/user-attachments/assets/86b4d8ef-50d2-4892-b700-6e51b0c43892)
+  - [Mobile](https://github.com/user-attachments/assets/643edac4-ae2f-4b83-8564-b12fe11f0220)
 
+  - **Sign-up Page**
+  - [Desktop](https://github.com/user-attachments/assets/1a1b22bf-9516-4d08-a0a7-cf7c62be0da3)
+  - [Mobile](https://github.com/user-attachments/assets/db1ce0db-3154-4538-b721-fe3d5bd3baed)
 
-- About Page 
+- **Login Page**
+  - [Desktop](https://github.com/user-attachments/assets/b6981029-105c-4471-a459-3a47ce607a65)
+  - [Mobile](https://github.com/user-attachments/assets/344d0329-70b8-4a44-86cc-805dab52a75e)
 
-   - Desktop
+- **Profile Page**
+  - [Desktop](https://github.com/user-attachments/assets/82a5eeaa-2a66-4e3b-88d0-60a9d7e817fb)
+  - [Mobile](https://github.com/user-attachments/assets/ca796999-8ea9-4c09-b05a-dcf4d724b85b)
 
-    ![image](https://github.com/user-attachments/assets/b6398176-7d4d-4a57-bb6e-42cd9965d4f1)
+- **Update Profile Page**
+  - [Desktop](https://github.com/user-attachments/assets/2749fc28-1029-4e54-9ad5-f3c01b44d880)
+  - [Mobile](https://github.com/user-attachments/assets/e2ee2d87-7700-4433-b6e4-1aaef4df62b2)
 
-   - Mobile
+- **Write Review Page**
+  - [Desktop](https://github.com/user-attachments/assets/80d9f002-6a1a-4dbd-bf61-f71e1511ba4b)
+  - [Mobile](https://github.com/user-attachments/assets/fe9c8dd3-f7a4-45cf-8e8a-487325d47a65)
 
-    ![image](https://github.com/user-attachments/assets/00514dca-4810-4d5e-a14a-f5c23744a305)
+- **Post Detail Page**
+  - [Desktop](https://github.com/user-attachments/assets/765cdeb1-ac81-4311-a917-f69eec7120ad)
+  - [Mobile](https://github.com/user-attachments/assets/ff542e16-df77-4c69-810f-053e45276f85)
 
+- **Update Post Detail**
+  - [Desktop](https://github.com/user-attachments/assets/0de24d3f-3b4d-4b9d-8ba7-6ef06e1a5dab)
+  - [Mobile](https://github.com/user-attachments/assets/763b9a74-22ad-4997-829e-b5529fa7b56c)
 
+- **Delete Post Page**
+  - [Desktop](https://github.com/user-attachments/assets/e5ffc1bd-760e-4ac6-8b48-b5a72867ed26)
+  - [Mobile](https://github.com/user-attachments/assets/51c7685d-fdfd-47f3-98b1-07bcffad0ae8)
+
+- **Delete Account**
+  - [Desktop](https://github.com/user-attachments/assets/a09f193e-9cc1-4cc0-82c9-197596939c62)
+  - [Mobile](https://github.com/user-attachments/assets/6ed4c2be-f851-4b58-aa7f-c1441cb98c79)
 
 
 
