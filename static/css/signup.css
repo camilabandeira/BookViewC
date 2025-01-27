@@ -77,6 +77,13 @@
     width: 100%;
 }
 
+.errorlist {
+    color: red;
+    margin: 0.4rem 0;
+    padding: 0;
+    font-size: 0.8rem;
+}
+
 @media screen and (max-width: 26.5625rem) {
     .signup_page-container {
         padding: 2rem;

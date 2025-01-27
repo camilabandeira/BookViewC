@@ -1,6 +1,9 @@
 .alert-dismissible {
     margin-top: 2rem;
     padding-bottom: 0;
+    background: hsl(0deg 0% 96.09%);
+    color: hsl(120, 39%, 24%);
+    border-top: 0.3125rem solid hsl(93, 55%, 54%);
 }
 
 .alert-container .alert p {

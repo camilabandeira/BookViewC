@@ -39,17 +39,6 @@ textarea {
     width: 100%;
 }
 
-.update-profile-submit-btn {
-    padding: 0.8rem;
-    border-radius: 0.5rem;
-    border: none;
-    background-color: var(--color-dark-charcoal);
-    color: var(--color-off-white);
-    font-weight: 700;
-    width: 100%;
-    margin-bottom: 2rem;
-}
-
 .update-profile-submit-btn:hover {
     background-color: hsla(60, 7%, 16%, 0.957);
 }
@@ -58,8 +47,42 @@ textarea {
     padding: 0.8rem;
     border-radius: 0.5rem;
     border: none;
-    background-color: #aa2a2a;
+    background-color: hsl(0, 60%, 42%);
     color: var(--color-off-white);
     font-weight: 700;
     margin-bottom: 2rem;
+}
+
+.update-btn-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.cancel-btn,
+.update-profile-submit-btn {
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.update-profile-submit-btn {
+    background-color: var(--color-dark-charcoal);
+    color: var(--color-off-white);
+}
+
+.cancel-btn {
+    background-color: hsl(0, 0%, 92%);
+    color: var(--color-dark-charcoal);
+    margin-bottom: 1.5rem;
+}
+
+.form-error-list {
+    color: red;
+    font-size: 0.9rem;
+    list-style-type: none;
+    margin: 5px 0;
+    padding: 0;
 }

@@ -36,6 +36,9 @@
             <textarea id="review-excerpt" name="excerpt" rows="3" placeholder="Please write a short description for your post...">{{ form.excerpt.value|default_if_none:'' }}</textarea>
 
             <label for="review-content">Content</label>
+            <ul class="errorlist">
+                <li>{{ form.content.errors }}</li>
+            </ul>
             {{ form.content }}
 
             <div class="review-category">

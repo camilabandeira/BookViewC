@@ -22,7 +22,6 @@ from .forms import (
 from .models import Post, Comment, Profile
 
 
-# Static Pages
 def homepage(request):
     posts = Post.objects.order_by('-created_on')
     paginator = Paginator(posts, 3)
@@ -43,7 +42,6 @@ def reviews_page(request):
     return render(request, 'blog/reviews_page.html', {'page_obj': page_obj})
 
 
-# Authentication Views
 def signup(request):
     if request.user.is_authenticated:
         return redirect('homepage')
@@ -73,7 +71,6 @@ class Logout(LogoutView):
     next_page = 'login'
 
 
-# Account Deletion View
 class DeleteAccountView(LoginRequiredMixin, View):
     form_class = DeleteAccountForm
     template_name = 'blog/delete_account.html'
@@ -98,7 +95,6 @@ class DeleteAccountView(LoginRequiredMixin, View):
         return render(request, self.template_name, {'form': form})
 
 
-# Profile Views
 def profile_view(request, username=None):
     user_profile = get_object_or_404(User, username=username)
     user_posts = Post.objects.filter(author=user_profile)
@@ -118,41 +114,25 @@ def profile_view(request, username=None):
 @login_required(login_url='/login/')
 def profile_update(request):
     try:
-        user_form = UserUpdateForm(
-            request.POST or None,
-            instance=request.user
-        )
-        profile_form = ProfileUpdateForm(
-            request.POST or None,
-            request.FILES or None,
-            instance=request.user.profile
-        )
+        user_form = UserUpdateForm(request.POST or None, instance=request.user)
+        profile_form = ProfileUpdateForm(request.POST or None, request.FILES or None, instance=request.user.profile)
     except Profile.DoesNotExist:
-        messages.error(
-            request,
-            "Profile does not exist for this user. Please contact support."
-        )
+        messages.error(request, "Profile does not exist for this user. Please contact support.")
         return redirect('homepage')
 
-    if (request.method == 'POST'
-            and user_form.is_valid()
-            and profile_form.is_valid()):
-        user_form.save()
-        profile_form.save()
-        messages.success(
-            request,
-            'Your profile has been updated successfully!'
-        )
-        return redirect(
-            'profile',
-            username=request.user.username
-        )
+    if request.method == 'POST':
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, 'Your profile has been updated successfully!')
+            return redirect('profile', username=request.user.username)
+        else:
+            messages.error(request, 'Please fix the errors below.')
 
-    context = {
+    return render(request, 'blog/profile_update.html', {
         'user_form': user_form,
-        'profile_form': profile_form
-    }
-    return render(request, 'blog/profile_update.html', context)
+        'profile_form': profile_form,
+    })
 
 
 @login_required(login_url='/login/')
@@ -189,7 +169,6 @@ def write_review(request):
     return render(request, 'blog/write_review.html', {'form': form})
 
 
-# Edit Post View
 @login_required(login_url='/login/')
 def edit_post(request, slug):
     post = get_object_or_404(Post, slug=slug, author=request.user)
@@ -207,7 +186,7 @@ def edit_post(request, slug):
     return render(request, 'blog/edit_post.html', {'form': form, 'post': post})
 
 
-# Delete Post View
+
 @login_required(login_url='/login/')
 def delete_post(request, slug):
     post = get_object_or_404(Post, slug=slug, author=request.user)
@@ -221,10 +200,14 @@ def delete_post(request, slug):
     return render(request, 'blog/confirm_delete_post.html', {'post': post})
 
 
-# Post Views
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
-    comments = post.comments.all()
+    comments = post.comments.order_by('-created_at')
+
+    paginator = Paginator(comments, 5)  
+    page_number = request.GET.get('page', 1)  
+    page_obj = paginator.get_page(page_number)
+
 
     if request.method == 'POST' and request.user.is_authenticated:
         content = request.POST.get('commentText')
@@ -243,11 +226,12 @@ def post_detail(request, slug):
             messages.error(request, 'Comment cannot be empty.')
 
     return render(request, 'blog/post_detail.html', {
-        'post': post, 'comments': comments
+        'post': post, 
+        'comments': comments,
+        'page_obj': page_obj,
     })
 
 
-# Comment Deletion View
 @login_required
 def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
@@ -262,7 +246,6 @@ def delete_comment(request, comment_id):
         return redirect('post_detail', slug=comment.post.slug)
 
 
-# Search View
 def search_posts(request):
     query = request.GET.get('q')
     if query:

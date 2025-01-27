@@ -24,12 +24,12 @@
 </head>
 
 <body>
-    <header role="banner">
+    <header>
         <!-- Skip to main content link -->
         <a href="#mainContent" class="visually-hidden-focusable">Skip to main content</a>
 
         <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container d-flex gap-3">
                 <a class="navbar-title mx-lg-0" href="{% url 'homepage' %}">BOOKVIEW</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -108,12 +108,12 @@
         </nav>
     </header>
 
-    <main id="mainContent" role="main">
+    <main id="mainContent">
         {% block content %}
         {% endblock %}
     </main>
 
-    <footer role="contentinfo">
+    <footer>
         <p>© 2024 BookView. All rights reserved. Created by <strong>Camila Bandeira</strong>.</p>
     </footer>
 

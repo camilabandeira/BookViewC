@@ -7,8 +7,8 @@ from .models import Comment, Profile, Post
 
 
 class SignupForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput)
-    password_confirmation = forms.CharField(widget=forms.PasswordInput)
+    password = forms.CharField(widget=forms.PasswordInput, required=True)
+    password_confirmation = forms.CharField(widget=forms.PasswordInput, required=True)
 
     class Meta:
         model = User
@@ -16,11 +16,19 @@ class SignupForm(forms.ModelForm):
 
     def clean(self):
         cleaned_data = super().clean()
+        first_name = cleaned_data.get("first_name")
+        last_name = cleaned_data.get("last_name")
         password = cleaned_data.get("password")
         password_confirmation = cleaned_data.get("password_confirmation")
 
+        if not first_name:
+            self.add_error('first_name', "First name is required.")
+        if not last_name:
+            self.add_error('last_name', "Last name is required.")
+
         if password != password_confirmation:
-            raise forms.ValidationError("Passwords do not match")
+            self.add_error('password_confirmation', "Passwords do not match.")
+
         return cleaned_data
 
 
@@ -44,6 +52,11 @@ class PostForm(forms.ModelForm):
             }),
         }
 
+def clean_content(self):
+        content = self.cleaned_data.get('content')
+        if not content or content.strip() == '':
+            raise forms.ValidationError("Content is required.")
+        return content
 
 class CommentForm(forms.ModelForm):
     class Meta:
@@ -92,23 +105,27 @@ class LoginForm(AuthenticationForm):
 
 
 class UserUpdateForm(forms.ModelForm):
+    first_name = forms.CharField(
+        required=True,
+        max_length=30,
+    )
+
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username', 'email']
 
-
 class ProfileUpdateForm(forms.ModelForm):
     profile_picture = forms.ImageField(
-        required=False,
-        widget=forms.FileInput(
-            attrs={'class': 'update-profile-input'}
-        )
+        required=False,  
+        widget=forms.FileInput(attrs={'class': 'update-profile-input'})
     )
     bio = forms.CharField(
-        widget=forms.Textarea(
-            attrs={'maxlength': '150'}
-        ),
-        required=False
+        required=False,
+        widget=forms.Textarea(attrs={
+            'class': 'update-bio-textarea',
+            'maxlength': '150',
+            'placeholder': 'Write something about yourself...'
+        })
     )
 
     class Meta:
