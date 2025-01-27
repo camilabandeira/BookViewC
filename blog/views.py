@@ -115,16 +115,19 @@ def profile_view(request, username=None):
 def profile_update(request):
     try:
         user_form = UserUpdateForm(request.POST or None, instance=request.user)
-        profile_form = ProfileUpdateForm(request.POST or None, request.FILES or None, instance=request.user.profile)
+        profile_form = ProfileUpdateForm(
+            request.POST or None, request.FILES or None,
+            instance=request.user.profile
+        )
     except Profile.DoesNotExist:
-        messages.error(request, "Profile does not exist for this user. Please contact support.")
+        messages.error(request, "Profile not found. Contact support.")
         return redirect('homepage')
 
     if request.method == 'POST':
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, 'Your profile has been updated successfully!')
+            messages.success(request, 'Profile updated successfully!')
             return redirect('profile', username=request.user.username)
         else:
             messages.error(request, 'Please fix the errors below.')
@@ -186,7 +189,6 @@ def edit_post(request, slug):
     return render(request, 'blog/edit_post.html', {'form': form, 'post': post})
 
 
-
 @login_required(login_url='/login/')
 def delete_post(request, slug):
     post = get_object_or_404(Post, slug=slug, author=request.user)
@@ -204,10 +206,9 @@ def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
     comments = post.comments.order_by('-created_at')
 
-    paginator = Paginator(comments, 5)  
-    page_number = request.GET.get('page', 1)  
+    paginator = Paginator(comments, 5)
+    page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
-
 
     if request.method == 'POST' and request.user.is_authenticated:
         content = request.POST.get('commentText')
@@ -226,7 +227,7 @@ def post_detail(request, slug):
             messages.error(request, 'Comment cannot be empty.')
 
     return render(request, 'blog/post_detail.html', {
-        'post': post, 
+        'post': post,
         'comments': comments,
         'page_obj': page_obj,
     })
@@ -263,5 +264,6 @@ def search_posts(request):
     page_obj = paginator.get_page(page_number)
 
     return render(request, 'blog/search_results.html', {
-        'page_obj': page_obj, 'query': query
+        'page_obj': page_obj,
+        'query': query
     })
