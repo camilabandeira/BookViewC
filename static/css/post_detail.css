@@ -1,5 +1,5 @@
 hr {
-    border-top: 0.0625rem solid #e1e1e1;
+    border-top: 0.0625rem solid hsl(0, 0%, 88%);
 }
 
 .post-container {
@@ -27,14 +27,14 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #333;
+    color: hsl(0, 0%, 20%);
     text-decoration: none;
     box-shadow: 0 0.15rem 0.25rem rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
 
 .cover_image-container {
-    border-bottom: 0.4375rem solid #565656;
+    border-bottom: 0.4375rem solid hsl(0, 0%, 34%);
 }
 
 .cover_image-container .col-12 {
@@ -63,7 +63,7 @@ hr {
 }
 
 .vertical-line {
-    border-left: 0.0625rem solid #e7e7e7;
+    border-left: 0.0625rem solid hsl(0, 0%, 91%);
     max-height: 100%;
 }
 
@@ -75,6 +75,7 @@ hr {
 .post-detailed-main {
     margin-top: 1rem;
     margin-left: 3.125rem;
+    min-width: 43.75rem;
 }
 
 .post-title {
@@ -117,7 +118,7 @@ hr {
 .delete-wrap {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
 }
 
 .comments-container {
@@ -130,12 +131,19 @@ hr {
 }
 
 .comment-author {
-    padding-bottom: 0.625rem;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    color: var(--color-muted-gray);
+}
+
+.comment-author strong {
+    color: var(--color-dark-charcoal);
 }
 
 .comment-item,
 .horizontal-separator {
-    border-bottom: 0.0625rem solid #e7e7e7;
+    border-bottom: 0.0625rem solid hsl(0, 0%, 91%);
 }
 
 .comment-item {
@@ -143,6 +151,11 @@ hr {
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 0.3125rem;
+    gap: 2rem;
+}
+
+.comment-item p {
+    padding: 0;
 }
 
 .comment-actions {
@@ -204,10 +217,105 @@ hr {
 }
 
 .post-comment:hover {
-    background-color: var(--color-primary-blue);
+    background-color: hsla(0, 0%, 25%, 0.271);
 }
 
-@media (max-width: 48rem) {
+.comments-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.step-links {
+    display: flex;
+    padding: 0.5rem;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.step-links a {
+    color: var(--color-dark-charcoal);
+    font-weight: 600;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(218, 218, 218, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--color-neutral-gray);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+}
+
+.modal-content button {
+    margin: 0 0.5rem;
+}
+
+.popup-container {
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    z-index: 1000;
+}
+
+.popup {
+    background: hsl(0deg 0% 96.09%);
+    color: hsl(354, 61%, 28%);
+    border-top: 0.3125rem solid hsl(354, 62%, 31%);
+    padding: 1rem;
+    border-radius: 0.1rem;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fade-in 0.5s forwards, fade-out 0.5s 4.5s forwards;
+}
+
+.popup-success {
+    background: hsl(0deg 0% 96.09%);
+    color: hsl(120, 39%, 24%);
+    border-top: 0.3125rem solid hsl(93, 55%, 54%);
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+}
+
+@media (max-width: 768px) {
     .post-edit-dlt {
         top: -1rem;
         left: 0;
@@ -300,7 +408,7 @@ hr {
     }
 }
 
-@media (min-width: 48.0625rem) and (max-width: 73.75rem) {
+@media (min-width: 769px) and (max-width: 1180px) {
     .post_detailed-container {
         padding: 0 0.5rem;
         min-width: 100%;
@@ -313,5 +421,13 @@ hr {
     .comments-container {
         left: 3rem;
         width: 65%;
+    }
+}
+
+@media (max-width:320px) {
+    .comment-author {
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.8rem;
     }
 }
