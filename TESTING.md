@@ -80,7 +80,7 @@ All Python code has been validated using [PEP8CI](https://pep8ci.herokuapp.com/)
   - [Desktop](https://github.com/user-attachments/assets/86b4d8ef-50d2-4892-b700-6e51b0c43892)
   - [Mobile](https://github.com/user-attachments/assets/643edac4-ae2f-4b83-8564-b12fe11f0220)
 
-  - **Sign-up Page**
+- **Sign-up Page**
   - [Desktop](https://github.com/user-attachments/assets/1a1b22bf-9516-4d08-a0a7-cf7c62be0da3)
   - [Mobile](https://github.com/user-attachments/assets/db1ce0db-3154-4538-b721-fe3d5bd3baed)
 
